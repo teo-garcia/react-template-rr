@@ -1,5 +1,4 @@
-import { Banner } from '~/features/banner/banner'
-import { useHealthcheck } from '~/lib/hooks/useHealthcheck'
+import { SiReactrouter } from 'react-icons/si'
 
 import type { Route } from './+types/_index'
 
@@ -16,10 +15,10 @@ export async function loader() {
   }
 }
 
-export default function HomePage({ loaderData }: Route.ComponentProps) {
-  const { title } = loaderData
-
-  useHealthcheck()
-
-  return <Banner title={title} />
+export default function HomePage() {
+  return (
+    <section className="flex h-screen flex-col items-center justify-center gap-y-16">
+      <SiReactrouter className="size-48 text-foreground dark:text-background lg:size-56 xl:size-72" />
+    </section>
+  )
 }

@@ -55,7 +55,6 @@
     "@vitejs/plugin-react": "^4.3.4",
     "babel-jest": "^29.7.0",
     "concurrently": "^9.1.2",
-    "cz-conventional-changelog": "^3.3.0",
     "dev": "link:@types@react-router/dev",
     "eslint": "9.19.0",
     "eslint-config-prettier": "^10.0.1",
@@ -86,10 +85,5 @@
   },
   "msw": {
     "workerDirectory": "public"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }

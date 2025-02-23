@@ -1,7 +1,7 @@
 import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import { ThemeSwitch } from './theme-switcg'
+import { ThemeSwitch } from './theme-switch'
 
 describe('<ThemeSwitch /> tests', () => {
   const user = userEvent.setup()

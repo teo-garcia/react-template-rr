@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { useEffect } from 'react'
+import { FaInfoCircle } from 'react-icons/fa'
 import {
   isRouteErrorResponse,
   Links,
@@ -11,9 +12,8 @@ import {
 } from 'react-router'
 
 import stylesheet from '~/app.css?url'
-import { ThemeSwitch } from '~/components/theme-switch/theme-switcg'
+import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
 import { ViewportInfo } from '~/components/viewport-info/viewport-info'
-import { NotFoundBanner } from '~/features/not-found-banner/not-found-banner'
 import { isDevelopment } from '~/lib/misc/config'
 
 import type { Route } from './+types/root'
@@ -54,7 +54,17 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   if (isRouteErrorResponse(error) && error.status === 404)
-    return <NotFoundBanner />
+    return (
+      <section className="flex h-screen flex-col items-center justify-center gap-y-10 xl:gap-y-16 text-foreground dark:text-background">
+        <FaInfoCircle className="size-16 md:size-28" />
+        <h1 className="text-4xl md:text-6xl font-semibold lg:text-7xl">
+          Page not found
+        </h1>
+        <p className="md:text-2xl">
+          The page you are looking for does not exist.
+        </p>
+      </section>
+    )
 
   return (
     <main className="fixed inset-0 bg-red-50 dark:bg-red-950/20 flex items-center justify-center">

@@ -2,13 +2,16 @@
 
 @custom-variant dark (&:is([data-prefers-color-scheme="dark"] *));
 
-@theme {
-  --font-sans: Inter, sans-serif;
+@theme inline {
+  --color-background: var(--color-slate-200);
+  --color-foreground: var(--color-slate-700);
+}
 
-  --color-primary: #2563eb;
-  --color-secondary: #60a5fa;
-  --color-black: #1e293b;
-  --color-white: #f1f5f9;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-slate-700);
+    --color-foreground: var(--color-slate-200);
+  }
 }
 
 /*
@@ -31,7 +34,7 @@
 
 html,
 body {
-  @apply bg-white dark:bg-slate-950;
+  @apply bg-background dark:bg-foreground;
   @apply transition-colors duration-100;
 
   @media (prefers-color-scheme: dark) {

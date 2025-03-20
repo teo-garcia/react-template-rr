@@ -15,7 +15,6 @@ import stylesheet from '~/app.css?url'
 import { ThemeProvider } from '~/components/theme-provider'
 import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
 import { ViewportInfo } from '~/components/viewport-info/viewport-info'
-import { isDevelopment } from '~/lib/misc/environment'
 
 import type { Route } from './+types/root'
 
@@ -99,7 +98,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
             {children}
             <ThemeSwitch />
             <ViewportInfo />
-            <ReactQueryDevtools buttonPosition="bottom-left" />
             <ScrollRestoration />
             <Scripts />
           </body>
@@ -112,11 +110,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 export default function App() {
   useEffect(() => {
     async function enableMocking() {
-      if (isDevelopment()) {
-        const { worker } = await import('~/lib/mocks/browser')
-        await worker.start({
-          onUnhandledRequest: 'bypass',
-        })
+      if (import.meta.env.DEV) {
+        const { initializeMSW } = await import('~/lib/mocks/browser')
+        await initializeMSW()
       }
     }
     enableMocking()
@@ -125,6 +121,7 @@ export default function App() {
   return (
     <>
       <Outlet />
+      <ReactQueryDevtools buttonPosition="bottom-left" />
     </>
   )
 }

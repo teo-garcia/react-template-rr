@@ -22,18 +22,36 @@ const initialState: ThemeProviderState = {
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
+const getThemeFromStorage = (key: string, fallback: Theme): Theme => {
+  if (import.meta.env.SSR) return fallback
+  try {
+    return (localStorage.getItem(key) as Theme) || fallback
+  } catch (e) {
+    // Handle localStorage errors
+    console.warn('Failed to get theme from localStorage:', e)
+    return fallback
+  }
+}
+
 export function ThemeProvider({
   children,
   defaultTheme = 'system',
   storageKey = 'theme',
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+  const [theme, setTheme] = useState<Theme>(() =>
+    getThemeFromStorage(storageKey, defaultTheme)
   )
   const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('light')
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (import.meta.env.SSR) return
+
     const root = window.document.documentElement
     root.classList.remove('light', 'dark')
 
@@ -55,10 +73,20 @@ export function ThemeProvider({
   const value = {
     theme,
     setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme)
+      if (!import.meta.env.SSR) {
+        try {
+          localStorage.setItem(storageKey, theme)
+        } catch (e) {
+          console.warn('Failed to save theme to localStorage:', e)
+        }
+      }
       setTheme(theme)
     },
     resolvedTheme,
+  }
+
+  if (!mounted) {
+    return <>{children}</>
   }
 
   return (

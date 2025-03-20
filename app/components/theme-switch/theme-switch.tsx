@@ -1,5 +1,4 @@
-'use client'
-
+// 'use client'
 import { Sun, Moon, Laptop } from 'lucide-react'
 import { useEffect, useState } from 'react'
 

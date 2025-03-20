@@ -1,9 +1,7 @@
-'use client'
+// 'use client'
 
 import { useEffect, useState } from 'react'
 import { BiFullscreen } from 'react-icons/bi'
-
-import { isDevelopment } from '~/lib/misc/environment'
 
 export const ViewportInfo = () => {
   const [viewportWidth, setViewportWidth] = useState<number | null>(null)
@@ -23,7 +21,7 @@ export const ViewportInfo = () => {
     }
   }, [])
 
-  if (!isDevelopment()) return null
+  if (import.meta.env.PROD) return null
 
   return (
     <aside className="fixed bottom-0 right-0 flex items-center gap-x-1 rounded-l-lg px-4 py-2 text-background bg-foreground  dark:bg-background dark:text-foreground font-semibold">

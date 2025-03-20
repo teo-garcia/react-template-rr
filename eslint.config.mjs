@@ -39,6 +39,7 @@ export default [
     )
   ),
   {
+    ignores: ['.react-router/**/*'],
     plugins: {
       react: fixupPluginRules(react),
       '@typescript-eslint': fixupPluginRules(typescriptEslint),

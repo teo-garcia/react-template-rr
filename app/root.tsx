@@ -12,35 +12,34 @@ import {
 } from 'react-router'
 
 import stylesheet from '~/app.css?url'
+import { ThemeProvider } from '~/components/theme-provider'
 import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
 import { ViewportInfo } from '~/components/viewport-info/viewport-info'
-import { isDevelopment } from '~/lib/misc/config'
+import { isDevelopment } from '~/lib/misc/environment'
 
 import type { Route } from './+types/root'
 
-const queryClient = new QueryClient()
+const createQueryClient = () => new QueryClient()
 
-export function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        {children}
-        <ThemeSwitch />
-        {isDevelopment() && <ViewportInfo />}
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
-  )
-}
-
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+export const links: Route.LinksFunction = () => [
+  {
+    rel: 'icon',
+    href: '/favicon.ico',
+    type: 'image/x-icon',
+  },
+  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+  {
+    rel: 'preconnect',
+    href: 'https://fonts.gstatic.com',
+    crossOrigin: 'anonymous',
+  },
+  {
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Ubuntu:wght@400;700&display=swap',
+  },
+  { rel: 'stylesheet', href: stylesheet },
+]
+export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   let message = 'Oops!'
   let details = 'An unexpected error occurred.'
   let stack: string | undefined
@@ -85,19 +84,30 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   )
 }
 
-export const links: Route.LinksFunction = () => [
-  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-  {
-    rel: 'preconnect',
-    href: 'https://fonts.gstatic.com',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Ubuntu:wght@400;700&display=swap',
-  },
-  { rel: 'stylesheet', href: stylesheet },
-]
+export const Layout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <QueryClientProvider client={createQueryClient()}>
+        <ThemeProvider defaultTheme="system" storageKey="theme">
+          <body>
+            {children}
+            <ThemeSwitch />
+            <ViewportInfo />
+            <ReactQueryDevtools buttonPosition="bottom-left" />
+            <ScrollRestoration />
+            <Scripts />
+          </body>
+        </ThemeProvider>
+      </QueryClientProvider>
+    </html>
+  )
+}
 
 export default function App() {
   useEffect(() => {
@@ -113,9 +123,8 @@ export default function App() {
   }, [])
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Outlet />
-      <ReactQueryDevtools buttonPosition="bottom-left" />
-    </QueryClientProvider>
+    </>
   )
 }

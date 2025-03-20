@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { BiFullscreen } from 'react-icons/bi'
 
-import { isDevelopment } from '~/lib/misc/config'
+import { isDevelopment } from '~/lib/misc/environment'
 
 export const ViewportInfo = () => {
   const [viewportWidth, setViewportWidth] = useState<number | null>(null)

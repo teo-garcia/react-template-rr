@@ -1,53 +1,61 @@
-# name: Dependencies Update 🤖
+name: Dependencies Update 🤖
 
-# on:
-#   workflow_dispatch:
-#   schedule:
-#     - cron: '0 0 1 * *'
+# Workflow is disabled - will only run if manually triggered with a repository_dispatch event
+on:
+  repository_dispatch:
+    types: [manual_trigger]
 
-# jobs:
-#   update:
-#     runs-on: ubuntu-latest
+permissions:
+  contents: write
 
-#     steps:
-#       - name: Checkout code 🤖
-#         uses: actions/checkout@v3
+jobs:
+  update:
+    runs-on: ubuntu-22.04
 
-#       - name: Setup Node 🤖
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: 'lts-alpine'
+    steps:
+      - name: Checkout code 🤖
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-#       - name: Setup pnpm 🤖
-#         uses: pnpm/action-setup@v2
-#         with:
-#           version: 8
-#           run_install: false
+      - name: Setup Node 🤖
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
 
-#       - name: Update dependencies 🤖
-#         run: pnpm dlx npm-check-updates -u --target minor
+      - name: Setup pnpm 🤖
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+          run_install: false
 
-#       - name: Install dependencies 🤖
-#         run: pnpm install --no-frozen-lockfile
+      - name: Update dependencies 🤖
+        run: |
+          # Update dependencies keeping semver compatibility
+          pnpm dlx npm-check-updates -u --target minor
+          # Generate updated lockfile
+          pnpm install --lockfile-only
 
-#       - name: Install dependencies 🤖
-#         run: pnpm test:unit
+      - name: Install dependencies 🤖
+        run: pnpm install --frozen-lockfile
 
-#       - name: Check for changes 🤖
-#         id: check_changes
-#         run: |
-#           if [[ -n "$(git status --porcelain)" ]]; then
-#             echo "Changes found!"
-#             echo ::set-output name=has_changes::true
-#           else
-#             echo "No changes found!"
-#             echo ::set-output name=has_changes::false
-#           fi
+      - name: Run tests 🤖
+        run: pnpm test:unit
 
-#       - name: Commit and Push changes 🤖
-#         if: steps.check_changes.outputs.has_changes == 'true'
-#         run: |
-#           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-#           git config --global user.name "github-actions[bot]"
-#           git commit -am "chore: Dependencies Update 🤖"
-#           git push
+      - name: Create Pull Request 🤖
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(deps): update dependencies 🤖'
+          title: 'chore(deps): update dependencies 🤖'
+          body: |
+            🤖 This PR contains dependency updates performed by the automated workflow.
+
+            Please review the changes and merge if everything looks good.
+          branch: 'chore/dependency-updates'
+          base: 'main'
+          labels: |
+            dependencies
+            automated
+          delete-branch: true

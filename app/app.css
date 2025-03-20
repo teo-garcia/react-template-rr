@@ -1,16 +1,16 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:is([data-prefers-color-scheme="dark"] *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: var(--color-slate-200);
-  --color-foreground: var(--color-slate-700);
+  --color-background: var(--color-gray-200);
+  --color-foreground: var(--color-gray-900);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--color-slate-700);
-    --color-foreground: var(--color-slate-200);
+    --color-background: var(--color-gray-900);
+    --color-foreground: var(--color-gray-200);
   }
 }
 
@@ -35,7 +35,7 @@
 html,
 body {
   @apply bg-background dark:bg-foreground;
-  @apply transition-colors duration-100;
+  @apply transition-colors duration-200;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;

@@ -60,7 +60,7 @@ Start building modern web applications using modern React Router.
 | create:component <name> | Creates a component at `src/components/<name>`. |
 | create:feature <name>   | Creates a component at `src/features/<name>`.   |
 
-# React Cheatsheet
+<!-- # React Cheatsheet
 
 ## Table of Contents
 
@@ -659,4 +659,4 @@ const App: React.FC = () => (
 )
 
 export default App
-```
+``` -->

@@ -4,14 +4,14 @@ import type { Route } from './+types/_index'
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: 'React Template RR | Home' },
+    { title: 'HOME | RTR' },
     { name: 'description', content: 'A basic starter to use RR' },
   ]
 }
 
 export async function loader() {
   return {
-    title: 'React Template RR',
+    status: 200,
   }
 }
 

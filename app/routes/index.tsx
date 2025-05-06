@@ -1,6 +1,6 @@
 import { Zap } from 'lucide-react'
 
-import type { Route } from './+types/_index'
+import type { Route } from './+types'
 
 export function meta({}: Route.MetaArgs) {
   return [

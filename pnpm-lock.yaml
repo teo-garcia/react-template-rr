@@ -58,8 +58,14 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11
       '@teo-garcia/eslint-config-shared':
-        specifier: ^0.1.1
-        version: 0.1.1(@eslint/compat@1.3.1(eslint@9.29.0(jiti@2.4.2)))(@eslint/eslintrc@3.3.1)(@eslint/js@9.29.0)(@typescript-eslint/eslint-plugin@8.35.0(@typescript-eslint/parser@8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(@typescript-eslint/parser@8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint-plugin-import@2.32.0)(eslint-plugin-jest@29.0.1(@typescript-eslint/eslint-plugin@8.35.0(@typescript-eslint/parser@8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(jest@30.0.3(@types/node@24.0.4)(ts-node@10.9.2(@types/node@24.0.4)(typescript@5.8.3)))(typescript@5.8.3))(eslint-plugin-jsx-a11y@6.10.2(eslint@9.29.0(jiti@2.4.2)))(eslint-plugin-playwright@2.2.0(eslint@9.29.0(jiti@2.4.2)))(eslint-plugin-testing-library@7.5.3(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))
+        specifier: ^0.1.5
+        version: 0.1.5(2b674854e70f3b87d22cd3b4c31cdaed)
+      '@teo-garcia/prettier-config-shared':
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@teo-garcia/tsconfig-shared':
+        specifier: ^0.1.0
+        version: 0.1.0
       '@testing-library/dom':
         specifier: ^10.4.0
         version: 10.4.0
@@ -1220,8 +1226,8 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@teo-garcia/eslint-config-shared@0.1.1':
-    resolution: {integrity: sha512-LwpTlbfAFkdml3d9hEvWfUidZ+1WBtZr1Vz2dlacgotabfgokBN18bbsZeHyezuMSJ3D0mwnESmUIhK5pdQGzA==}
+  '@teo-garcia/eslint-config-shared@0.1.5':
+    resolution: {integrity: sha512-rbQacp+fDSkawNGlOSZ8FnQvrGcg+jMqB4SZpfWK8R987+tgq0f7Qx+ZWn9DmeQW9hoZ4oRjiI1F7pIVqSa6rg==}
     engines: {node: '>=22'}
     peerDependencies:
       '@eslint/compat': ^1.3.1
@@ -1230,11 +1236,19 @@ packages:
       '@typescript-eslint/eslint-plugin': ^8.0.0
       '@typescript-eslint/parser': ^8.0.0
       eslint: ^8.57.0 || ^9.0.0
+      eslint-config-prettier: ^10.1.5
       eslint-plugin-import: ^2.32.0
       eslint-plugin-jest: ^29.0.1
       eslint-plugin-jsx-a11y: ^6.10.2
       eslint-plugin-playwright: ^2.2.0
+      eslint-plugin-prettier: ^5.5.1
       eslint-plugin-testing-library: ^7.0.0
+
+  '@teo-garcia/prettier-config-shared@0.1.0':
+    resolution: {integrity: sha512-r5k8bQfZ3LXAV0VJQUNBJ0rFyy+W9Q/uYRX71xy6dexcienNzLlmky3QAu76FNp1gDdWMJcZptUrTh52cEO4fA==}
+
+  '@teo-garcia/tsconfig-shared@0.1.0':
+    resolution: {integrity: sha512-uBKHn/IJ/Yj2lJ1jXlu17cZ2Uq4uGn5X2rngT2q4YAPj9jPmomhy0qMKTsWaLy5dE5ixOHVBJCC4GY/tfmSwvg==}
 
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
@@ -5818,7 +5832,7 @@ snapshots:
       '@tanstack/query-core': 5.81.2
       react: 19.1.0
 
-  '@teo-garcia/eslint-config-shared@0.1.1(@eslint/compat@1.3.1(eslint@9.29.0(jiti@2.4.2)))(@eslint/eslintrc@3.3.1)(@eslint/js@9.29.0)(@typescript-eslint/eslint-plugin@8.35.0(@typescript-eslint/parser@8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(@typescript-eslint/parser@8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint-plugin-import@2.32.0)(eslint-plugin-jest@29.0.1(@typescript-eslint/eslint-plugin@8.35.0(@typescript-eslint/parser@8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(jest@30.0.3(@types/node@24.0.4)(ts-node@10.9.2(@types/node@24.0.4)(typescript@5.8.3)))(typescript@5.8.3))(eslint-plugin-jsx-a11y@6.10.2(eslint@9.29.0(jiti@2.4.2)))(eslint-plugin-playwright@2.2.0(eslint@9.29.0(jiti@2.4.2)))(eslint-plugin-testing-library@7.5.3(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))':
+  '@teo-garcia/eslint-config-shared@0.1.5(2b674854e70f3b87d22cd3b4c31cdaed)':
     dependencies:
       '@eslint/compat': 1.3.1(eslint@9.29.0(jiti@2.4.2))
       '@eslint/eslintrc': 3.3.1
@@ -5826,11 +5840,17 @@ snapshots:
       '@typescript-eslint/eslint-plugin': 8.35.0(@typescript-eslint/parser@8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
       '@typescript-eslint/parser': 8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
       eslint: 9.29.0(jiti@2.4.2)
+      eslint-config-prettier: 10.1.5(eslint@9.29.0(jiti@2.4.2))
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@4.4.4)(eslint@9.29.0(jiti@2.4.2))
       eslint-plugin-jest: 29.0.1(@typescript-eslint/eslint-plugin@8.35.0(@typescript-eslint/parser@8.35.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(jest@30.0.3(@types/node@24.0.4)(ts-node@10.9.2(@types/node@24.0.4)(typescript@5.8.3)))(typescript@5.8.3)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.29.0(jiti@2.4.2))
       eslint-plugin-playwright: 2.2.0(eslint@9.29.0(jiti@2.4.2))
+      eslint-plugin-prettier: 5.5.1(@types/eslint@8.56.2)(eslint-config-prettier@10.1.5(eslint@9.29.0(jiti@2.4.2)))(eslint@9.29.0(jiti@2.4.2))(prettier@3.6.1)
       eslint-plugin-testing-library: 7.5.3(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
+
+  '@teo-garcia/prettier-config-shared@0.1.0': {}
+
+  '@teo-garcia/tsconfig-shared@0.1.0': {}
 
   '@testing-library/dom@10.4.0':
     dependencies:

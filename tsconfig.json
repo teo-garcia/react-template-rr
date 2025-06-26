@@ -1,4 +1,5 @@
 {
+  "extends": "@teo-garcia/tsconfig-shared/tsconfig.json",
   "include": [
     "**/*",
     "**/.server/**/*",
@@ -7,26 +8,15 @@
     "./jest.setup.cjs"
   ],
   "compilerOptions": {
-    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "esModuleInterop": false,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
-    "isolatedModules": true,
     "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "ES2022"],
     "module": "ES2022",
-    "moduleResolution": "bundler",
-    "noEmit": true,
     "paths": {
       "~/*": ["./app/*"]
     },
-    "resolveJsonModule": true,
     "rootDirs": [".", "./.react-router/types"],
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ES2022",
     "types": ["node", "vite/client"],
     "verbatimModuleSyntax": true
   }

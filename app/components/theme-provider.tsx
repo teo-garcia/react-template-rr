@@ -2,22 +2,22 @@ import { createContext, useContext, useEffect, useState } from 'react'
 
 type Theme = 'dark' | 'light' | 'system'
 
-type ThemeProviderProps = {
+type ThemeProviderProperties = {
   children: React.ReactNode
   defaultTheme?: Theme
   storageKey?: string
 }
 
 type ThemeProviderState = {
-  theme: Theme
-  setTheme: (theme: Theme) => void
   resolvedTheme: 'dark' | 'light'
+  setTheme: (theme: Theme) => void
+  theme: Theme
 }
 
 const initialState: ThemeProviderState = {
-  theme: 'system',
-  setTheme: () => null,
   resolvedTheme: 'light',
+  setTheme: () => null,
+  theme: 'system',
 }
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
@@ -26,9 +26,9 @@ const getThemeFromStorage = (key: string, fallback: Theme): Theme => {
   if (import.meta.env.SSR) return fallback
   try {
     return (localStorage.getItem(key) as Theme) || fallback
-  } catch (e) {
+  } catch (error) {
     // Handle localStorage errors
-    console.warn('Failed to get theme from localStorage:', e)
+    console.warn('Failed to get theme from localStorage:', error)
     return fallback
   }
 }
@@ -37,8 +37,8 @@ export function ThemeProvider({
   children,
   defaultTheme = 'system',
   storageKey = 'theme',
-  ...props
-}: ThemeProviderProps) {
+  ...properties
+}: ThemeProviderProperties) {
   const [theme, setTheme] = useState<Theme>(() =>
     getThemeFromStorage(storageKey, defaultTheme)
   )
@@ -71,18 +71,18 @@ export function ThemeProvider({
   }, [theme])
 
   const value = {
-    theme,
+    resolvedTheme,
     setTheme: (theme: Theme) => {
       if (!import.meta.env.SSR) {
         try {
           localStorage.setItem(storageKey, theme)
-        } catch (e) {
-          console.warn('Failed to save theme to localStorage:', e)
+        } catch (error) {
+          console.warn('Failed to save theme to localStorage:', error)
         }
       }
       setTheme(theme)
     },
-    resolvedTheme,
+    theme,
   }
 
   if (!mounted) {
@@ -90,7 +90,7 @@ export function ThemeProvider({
   }
 
   return (
-    <ThemeProviderContext.Provider {...props} value={value}>
+    <ThemeProviderContext.Provider {...properties} value={value}>
       {children}
     </ThemeProviderContext.Provider>
   )

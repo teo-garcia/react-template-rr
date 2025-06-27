@@ -2,13 +2,13 @@ import { createContext, useContext, useEffect, useState } from 'react'
 
 type Theme = 'dark' | 'light' | 'system'
 
-type ThemeProviderProperties = {
+interface ThemeProviderProps {
   children: React.ReactNode
   defaultTheme?: Theme
   storageKey?: string
 }
 
-type ThemeProviderState = {
+interface ThemeProviderState {
   resolvedTheme: 'dark' | 'light'
   setTheme: (theme: Theme) => void
   theme: Theme
@@ -16,7 +16,7 @@ type ThemeProviderState = {
 
 const initialState: ThemeProviderState = {
   resolvedTheme: 'light',
-  setTheme: () => null,
+  setTheme: () => {},
   theme: 'system',
 }
 
@@ -38,7 +38,7 @@ export function ThemeProvider({
   defaultTheme = 'system',
   storageKey = 'theme',
   ...properties
-}: ThemeProviderProperties) {
+}: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(() =>
     getThemeFromStorage(storageKey, defaultTheme)
   )

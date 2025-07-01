@@ -16,7 +16,11 @@
     "test:e2e": "pnpm playwright test --ui",
     "lint:ts": "react-router typegen && tsc",
     "lint:js": "eslint app/**/*.{ts,tsx}",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "vitest",
+    "test:browser": "vitest --browser",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@react-router/node": "^7.6.2",
@@ -40,6 +44,7 @@
     "@teo-garcia/eslint-config-shared": "file:../eslint-config-shared",
     "@teo-garcia/prettier-config-shared": "^0.1.0",
     "@teo-garcia/tsconfig-shared": "^0.1.0",
+    "@teo-garcia/vitest-config-shared": "^0.1.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -48,7 +53,8 @@
     "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.35.0",
     "@typescript-eslint/parser": "^8.35.0",
-    "@vitejs/plugin-react": "^4.6.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/ui": "3.2.4",
     "concurrently": "^9.2.0",
     "eslint": "9.29.0",
     "eslint-config-prettier": "^10.1.5",
@@ -72,7 +78,8 @@
     "typescript": "^5.8.3",
     "vite": "^7.0.0",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.0.0",
+    "vitest": "^3.0.0"
   },
   "msw": {
     "workerDirectory": "public"

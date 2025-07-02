@@ -38,7 +38,7 @@ export function ThemeProvider({
   defaultTheme = 'system',
   storageKey = 'theme',
   ...properties
-}: ThemeProviderProps) {
+}: Readonly<ThemeProviderProps>) {
   const [theme, setTheme] = useState<Theme>(() =>
     getThemeFromStorage(storageKey, defaultTheme)
   )
@@ -52,11 +52,11 @@ export function ThemeProvider({
   useEffect(() => {
     if (import.meta.env.SSR) return
 
-    const root = window.document.documentElement
+    const root = globalThis.document.documentElement
     root.classList.remove('light', 'dark')
 
     if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+      const systemTheme = globalThis.matchMedia('(prefers-color-scheme: dark)')
         .matches
         ? 'dark'
         : 'light'
@@ -99,7 +99,7 @@ export function ThemeProvider({
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext)
 
-  if (context === undefined)
+  if (context == undefined)
     throw new Error('useTheme must be used within a ThemeProvider')
 
   return context

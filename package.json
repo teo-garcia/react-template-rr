@@ -1,27 +1,5 @@
 {
-  "name": "react-template-rr",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "engines": {
-    "node": ">=22"
-  },
-  "scripts": {
-    "dev": "pnpm run dev:web",
-    "build": "pnpm run build:web",
-    "dev:web": "react-router dev",
-    "build:web": "react-router build",
-    "start:web": "react-router-serve ./build/server/index.js",
-    "test:unit": "jest --passWithNoTests",
-    "test:e2e": "pnpm playwright test --ui",
-    "lint:ts": "react-router typegen && tsc",
-    "lint:js": "eslint app/**/*.{ts,tsx}",
-    "prepare": "husky",
-    "test": "vitest",
-    "test:browser": "vitest --browser",
-    "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
-  },
+  "author": "teo-garcia",
   "dependencies": {
     "@react-router/node": "^7.6.2",
     "@react-router/serve": "^7.6.2",
@@ -41,8 +19,8 @@
     "@playwright/test": "^1.53.1",
     "@react-router/dev": "^7.6.2",
     "@tailwindcss/postcss": "^4.1.11",
-    "@teo-garcia/eslint-config-shared": "^0.1.9",
-    "@teo-garcia/prettier-config-shared": "^0.1.0",
+    "@teo-garcia/eslint-config-shared": "^0.2.5",
+    "@teo-garcia/prettier-config-shared": "^0.2.1",
     "@teo-garcia/tsconfig-shared": "^0.1.0",
     "@teo-garcia/vitest-config-shared": "^0.1.0",
     "@testing-library/dom": "^10.4.0",
@@ -62,10 +40,9 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-playwright": "^2.2.0",
-    "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-tailwindcss": "^3.18.0",
+    "eslint-plugin-sonarjs": "^3.0.4",
     "eslint-plugin-testing-library": "^7.5.3",
     "globals": "^16.2.0",
     "husky": "^9.1.7",
@@ -81,7 +58,33 @@
     "vite-tsconfig-paths": "^5.0.0",
     "vitest": "^3.0.0"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "msw": {
     "workerDirectory": "public"
-  }
+  },
+  "name": "react-template-rr",
+  "private": true,
+  "scripts": {
+    "build": "pnpm run build:web",
+    "build:web": "react-router build",
+    "coverage": "vitest run --coverage",
+    "dev": "pnpm run dev:web",
+    "dev:web": "react-router dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:es": "eslint . --fix",
+    "lint:es:check": "eslint .",
+    "lint:ts": "react-router typegen && tsc --noEmit",
+    "prepare": "husky",
+    "start:web": "react-router-serve ./build/server/index.js",
+    "test": "vitest",
+    "test:browser": "vitest --browser",
+    "test:e2e": "pnpm playwright test --ui",
+    "test:ui": "vitest --ui",
+    "test:unit": "jest --passWithNoTests"
+  },
+  "type": "module",
+  "version": "0.0.0"
 }

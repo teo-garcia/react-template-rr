@@ -53,27 +53,27 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
 
   if (isRouteErrorResponse(error) && error.status === 404)
     return (
-      <section className="flex h-screen flex-col items-center justify-center gap-y-10 xl:gap-y-16 text-foreground dark:text-background">
-        <Info className="size-16 md:size-28" />
-        <h1 className="text-4xl md:text-6xl font-semibold lg:text-7xl">
+      <section className='flex h-screen flex-col items-center justify-center gap-y-10 xl:gap-y-16 text-foreground dark:text-background'>
+        <Info className='size-16 md:size-28' />
+        <h1 className='text-4xl md:text-6xl font-semibold lg:text-7xl'>
           Page not found
         </h1>
-        <p className="md:text-2xl">
+        <p className='md:text-2xl'>
           The page you are looking for does not exist.
         </p>
       </section>
     )
 
   return (
-    <main className="fixed inset-0 bg-red-50 dark:bg-red-950/20 flex items-center justify-center">
-      <div className="max-w-md p-8 bg-white dark:bg-gray-800 rounded-lg shadow-xl">
-        <div className="text-red-600 dark:text-red-400 text-4xl font-bold mb-4">
+    <main className='fixed inset-0 bg-red-50 dark:bg-red-950/20 flex items-center justify-center'>
+      <div className='max-w-md p-8 bg-white dark:bg-gray-800 rounded-lg shadow-xl'>
+        <div className='text-red-600 dark:text-red-400 text-4xl font-bold mb-4'>
           {message}
         </div>
-        <div className="text-gray-600 dark:text-gray-300 mb-6">{details}</div>
+        <div className='text-gray-600 dark:text-gray-300 mb-6'>{details}</div>
         {stack && (
-          <div className="bg-gray-100 dark:bg-gray-900 rounded-sm p-4">
-            <code className="text-sm text-gray-800 dark:text-gray-200 font-mono">
+          <div className='bg-gray-100 dark:bg-gray-900 rounded-sm p-4'>
+            <code className='text-sm text-gray-800 dark:text-gray-200 font-mono'>
               {stack}
             </code>
           </div>
@@ -85,15 +85,15 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <Meta />
         <Links />
       </head>
       <QueryClientProvider client={createQueryClient()}>
-        <ThemeProvider defaultTheme="system" storageKey="theme">
+        <ThemeProvider defaultTheme='system' storageKey='theme'>
           <body>
             {children}
             <ThemeSwitch />
@@ -121,7 +121,7 @@ export default function App() {
   return (
     <>
       <Outlet />
-      <ReactQueryDevtools buttonPosition="bottom-left" />
+      <ReactQueryDevtools buttonPosition='bottom-left' />
     </>
   )
 }

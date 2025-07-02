@@ -1,4 +1,4 @@
-import shared from '@teo-garcia/eslint-config-shared'
-import sharedReact from '@teo-garcia/eslint-config-shared/react'
+import base from '@teo-garcia/eslint-config-shared/base'
+import react from '@teo-garcia/eslint-config-shared/react'
 
-export default [...shared, ...sharedReact]
+export default [...base, ...react]

@@ -41,7 +41,7 @@
     "@playwright/test": "^1.53.1",
     "@react-router/dev": "^7.6.2",
     "@tailwindcss/postcss": "^4.1.11",
-    "@teo-garcia/eslint-config-shared": "file:../eslint-config-shared",
+    "@teo-garcia/eslint-config-shared": "^0.1.9",
     "@teo-garcia/prettier-config-shared": "^0.1.0",
     "@teo-garcia/tsconfig-shared": "^0.1.0",
     "@teo-garcia/vitest-config-shared": "^0.1.0",

@@ -58,8 +58,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11
       '@teo-garcia/eslint-config-shared':
-        specifier: file:../eslint-config-shared
-        version: file:../eslint-config-shared(7f182e04bfd2a6236e5882b615e4d812)
+        specifier: ^0.1.9
+        version: 0.1.9(7f182e04bfd2a6236e5882b615e4d812)
       '@teo-garcia/prettier-config-shared':
         specifier: ^0.1.0
         version: 0.1.0
@@ -1179,8 +1179,8 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@teo-garcia/eslint-config-shared@file:../eslint-config-shared':
-    resolution: {directory: ../eslint-config-shared, type: directory}
+  '@teo-garcia/eslint-config-shared@0.1.9':
+    resolution: {integrity: sha512-dI4BZOOn3/zh8xHDe6BuX6aXZsc0CdbYphV1k1Qn5JSmXLctm4up+l8P6gqZlZIikcjn6hQCB05TuHHvKNehlw==}
     engines: {node: '>=22'}
     peerDependencies:
       '@eslint/compat': ^1.3.1
@@ -1197,9 +1197,9 @@ packages:
       eslint-plugin-prettier: ^5.5.1
       eslint-plugin-react-refresh: ^0.4.9
       eslint-plugin-simple-import-sort: ^12.1.1
-      eslint-plugin-sonarjs: ^1.0.3
+      eslint-plugin-sonarjs: ^3.0.4
       eslint-plugin-testing-library: ^7.0.0
-      eslint-plugin-unicorn: ^55.0.0
+      eslint-plugin-unicorn: ^59.0.1
 
   '@teo-garcia/prettier-config-shared@0.1.0':
     resolution: {integrity: sha512-r5k8bQfZ3LXAV0VJQUNBJ0rFyy+W9Q/uYRX71xy6dexcienNzLlmky3QAu76FNp1gDdWMJcZptUrTh52cEO4fA==}
@@ -5920,7 +5920,7 @@ snapshots:
       '@tanstack/query-core': 5.81.2
       react: 19.1.0
 
-  '@teo-garcia/eslint-config-shared@file:../eslint-config-shared(7f182e04bfd2a6236e5882b615e4d812)':
+  '@teo-garcia/eslint-config-shared@0.1.9(7f182e04bfd2a6236e5882b615e4d812)':
     dependencies:
       '@eslint/compat': 1.3.1(eslint@9.29.0(jiti@2.4.2))
       '@eslint/eslintrc': 3.3.1

@@ -63,8 +63,8 @@ importers:
         specifier: ^0.2.1
         version: 0.2.1(prettier@3.6.1)
       "@teo-garcia/tsconfig-shared":
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.1.1
+        version: 0.1.1
       "@teo-garcia/vitest-config-shared":
         specifier: ^0.1.0
         version: 0.1.0(@vitejs/plugin-react@4.6.0(vite@7.0.0(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)))(@vitest/browser@3.2.4)(playwright-core@1.53.1)(vite-tsconfig-paths@5.1.4(typescript@5.8.3)(vite@7.0.0(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)))(vitest@3.2.4)
@@ -1540,10 +1540,10 @@ packages:
     peerDependencies:
       prettier: ^3.0.0
 
-  "@teo-garcia/tsconfig-shared@0.1.0":
+  "@teo-garcia/tsconfig-shared@0.1.1":
     resolution:
       {
-        integrity: sha512-uBKHn/IJ/Yj2lJ1jXlu17cZ2Uq4uGn5X2rngT2q4YAPj9jPmomhy0qMKTsWaLy5dE5ixOHVBJCC4GY/tfmSwvg==,
+        integrity: sha512-pAC/xRVg3E8qpX4Vs0YXY7Xd7Kg7Ns/gBHpRmimXW+48eP1P8MZTRMaFMd8K/tC+7jWaY9M6PvL/AvrPClStIw==,
       }
 
   "@teo-garcia/vitest-config-shared@0.1.0":
@@ -7571,7 +7571,7 @@ snapshots:
     dependencies:
       prettier: 3.6.1
 
-  "@teo-garcia/tsconfig-shared@0.1.0": {}
+  "@teo-garcia/tsconfig-shared@0.1.1": {}
 
   "@teo-garcia/vitest-config-shared@0.1.0(@vitejs/plugin-react@4.6.0(vite@7.0.0(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)))(@vitest/browser@3.2.4)(playwright-core@1.53.1)(vite-tsconfig-paths@5.1.4(typescript@5.8.3)(vite@7.0.0(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)))(vitest@3.2.4)":
     dependencies:

@@ -1,23 +1,16 @@
 {
-  "extends": "@teo-garcia/tsconfig-shared/tsconfig.json",
+  "extends": "@teo-garcia/tsconfig-shared/react-router",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+    "rootDirs": [".", "./.react-router/types"]
+  },
   "include": [
     "**/*",
     "**/.server/**/*",
     "**/.client/**/*",
-    ".react-router/types/**/*",
-    "./jest.setup.cjs"
-  ],
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "ES2022"],
-    "module": "ES2022",
-    "paths": {
-      "~/*": ["./app/*"]
-    },
-    "rootDirs": [".", "./.react-router/types"],
-    "types": ["node", "vite/client"],
-    "verbatimModuleSyntax": true
-  }
+    ".react-router/types/**/*"
+  ]
 }

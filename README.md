@@ -40,7 +40,8 @@ Start building modern web applications using modern React Router.
 - TypeScript: For static type checking and improved developer experience.
 - ESLint + Prettier: For consistent code style and catching potential issues.
 - Husky + Lint Staged: For Git hooks to ensure code quality before commits.
-- Jest + Testing Library React: For unit testing React components and utilities.
+- Vitest + Testing Library React: For unit testing React components and
+  utilities.
 - Playwright: For end-to-end testing across multiple browsers.
 - MSW: For mocking API requests during development and testing.
 
@@ -53,7 +54,7 @@ Start building modern web applications using modern React Router.
 | dev:web                 | Run `vite` in `DEV` mode.                       |
 | build:web               | Run `vite` in `PROD` mode.                      |
 | start:web               | Run `vite` server (build required).             |
-| test:unit               | Run `jest`.                                     |
+| test:unit               | Run `vitest`.                                   |
 | test:e2e                | Run `dev`, and `playwright`.                    |
 | lint:css                | Lint CSS files.                                 |
 | lint:js                 | Lint JS files.                                  |

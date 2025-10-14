@@ -4,24 +4,30 @@ import { RulerIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export const ViewportInfo = () => {
-  const [viewportWidth, setViewportWidth] = useState<number | undefined>()
-  const [viewportHeight, setViewportHeight] = useState<number | undefined>()
-
-  const handleResize = () => {
-    setViewportWidth(window.innerWidth)
-    setViewportHeight(window.innerHeight)
-  }
+  const [{ width: viewportWidth, height: viewportHeight }, setViewportSize] =
+    useState(() => ({ width: 0, height: 0 }))
 
   useEffect(() => {
-    setViewportWidth(window.innerWidth)
-    setViewportHeight(window.innerHeight)
+    if (globalThis.window == undefined) {
+      return
+    }
+
+    const handleResize = () => {
+      setViewportSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+
+    handleResize()
+
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
 
-  if (import.meta.env.PROD) return
+  if (import.meta.env.PROD) return null
 
   return (
     <aside className='fixed bottom-0 right-0 flex items-center gap-x-1 rounded-l-lg px-4 py-2 bg-primary text-primary-foreground font-semibold'>

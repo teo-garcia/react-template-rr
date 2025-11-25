@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 type Theme = 'dark' | 'light' | 'system'
 
@@ -27,7 +27,6 @@ const getThemeFromStorage = (key: string, fallback: Theme): Theme => {
   try {
     return (localStorage.getItem(key) as Theme) || fallback
   } catch (error) {
-    // Handle localStorage errors
     console.warn('Failed to get theme from localStorage:', error)
     return fallback
   }
@@ -42,33 +41,36 @@ export function ThemeProvider({
   const [theme, setTheme] = useState<Theme>(() =>
     getThemeFromStorage(storageKey, defaultTheme)
   )
-  const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('light')
-  const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const [systemTheme, setSystemTheme] = useState<'dark' | 'light'>(() => {
+    if (import.meta.env.SSR) return 'light'
+    return globalThis.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
+  })
+
+  const resolvedTheme = useMemo<'dark' | 'light'>(() => {
+    return theme === 'system' ? systemTheme : theme
+  }, [theme, systemTheme])
 
   useEffect(() => {
     if (import.meta.env.SSR) return
 
-    const root = globalThis.document.documentElement
-    root.classList.remove('light', 'dark')
-
-    if (theme === 'system') {
-      const systemTheme = globalThis.matchMedia('(prefers-color-scheme: dark)')
-        .matches
-        ? 'dark'
-        : 'light'
-
-      root.classList.add(systemTheme)
-      setResolvedTheme(systemTheme)
-      return
+    const mediaQuery = globalThis.matchMedia('(prefers-color-scheme: dark)')
+    const handleChange = (e: MediaQueryListEvent) => {
+      setSystemTheme(e.matches ? 'dark' : 'light')
     }
 
-    root.classList.add(theme)
-    setResolvedTheme(theme)
-  }, [theme])
+    mediaQuery.addEventListener('change', handleChange)
+    return () => mediaQuery.removeEventListener('change', handleChange)
+  }, [])
+
+  useEffect(() => {
+    if (import.meta.env.SSR) return
+    const root = globalThis.document.documentElement
+    root.classList.remove('light', 'dark')
+    root.classList.add(resolvedTheme)
+  }, [resolvedTheme])
 
   const value = {
     resolvedTheme,
@@ -83,10 +85,6 @@ export function ThemeProvider({
       setTheme(theme)
     },
     theme,
-  }
-
-  if (!mounted) {
-    return <>{children}</>
   }
 
   return (

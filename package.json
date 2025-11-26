@@ -1,9 +1,9 @@
 {
   "author": "teo-garcia",
   "dependencies": {
-    "@mjackson/node-fetch-server": "^0.6.0",
-    "@react-router/node": "^7.9.4",
-    "@react-router/serve": "^7.9.4",
+    "@mjackson/node-fetch-server": "^0.6.1",
+    "@react-router/node": "^7.9.6",
+    "@react-router/serve": "^7.9.6",
     "@tanstack/react-query": "^5.90.2",
     "@tanstack/react-query-devtools": "^5.90.2",
     "clsx": "^2.1.1",
@@ -11,14 +11,14 @@
     "lucide-react": "^0.554.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router": "^7.9.4"
+    "react-router": "^7.9.6"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.37.0",
     "@playwright/test": "^1.56.0",
-    "@react-router/dev": "^7.9.4",
+    "@react-router/dev": "^7.9.6",
     "@tailwindcss/postcss": "^4.1.14",
     "@teo-garcia/eslint-config-shared": "^0.3.0",
     "@teo-garcia/prettier-config-shared": "^0.2.1",

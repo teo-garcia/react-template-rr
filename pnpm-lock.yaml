@@ -9,13 +9,13 @@ importers:
   .:
     dependencies:
       '@mjackson/node-fetch-server':
-        specifier: ^0.6.0
+        specifier: ^0.6.1
         version: 0.6.1
       '@react-router/node':
-        specifier: ^7.9.4
+        specifier: ^7.9.6
         version: 7.9.6(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
       '@react-router/serve':
-        specifier: ^7.9.4
+        specifier: ^7.9.6
         version: 7.9.6(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
       '@tanstack/react-query':
         specifier: ^5.90.2
@@ -39,7 +39,7 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       react-router:
-        specifier: ^7.9.4
+        specifier: ^7.9.6
         version: 7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       '@eslint/compat':
@@ -55,7 +55,7 @@ importers:
         specifier: ^1.56.0
         version: 1.57.0
       '@react-router/dev':
-        specifier: ^7.9.4
+        specifier: ^7.9.6
         version: 7.9.6(@react-router/serve@7.9.6(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3))(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)(vite@7.2.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1))(yaml@2.8.1)
       '@tailwindcss/postcss':
         specifier: ^4.1.14

@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "api/**/*": {
-      "includeFiles": "node_modules/@mjackson/node-fetch-server/**"
-    }
-  },
   "git": {
     "deploymentEnabled": false
   }

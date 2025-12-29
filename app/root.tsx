@@ -1,5 +1,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { viteEnvironmentAdapter } from '@teo-garcia/react-shared/adapters/environment'
+import { createCustomThemeAdapter } from '@teo-garcia/react-shared/adapters/theme'
+import { ThemeSwitch, ViewportInfo } from '@teo-garcia/react-shared/components'
 import { Info } from 'lucide-react'
 import { useEffect } from 'react'
 import {
@@ -12,9 +15,8 @@ import {
 } from 'react-router'
 
 import stylesheet from '~/app.css?url'
-import { ThemeProvider } from '~/components/theme-provider'
-import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
-import { ViewportInfo } from '~/components/viewport-info/viewport-info'
+import { ThemeProvider, useTheme } from '~/components/theme-provider'
+import { env } from '~/lib/env'
 
 import type { Route } from './+types/root'
 
@@ -46,7 +48,7 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   if (isRouteErrorResponse(error)) {
     message = error.status === 404 ? '404' : 'Error'
     details = error.statusText || details
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
+  } else if (env.isDev && error && error instanceof Error) {
     details = error.message
     stack = error.stack
   }
@@ -83,6 +85,17 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   )
 }
 
+const UiOverlays = () => {
+  const themeAdapter = createCustomThemeAdapter(useTheme())
+
+  return (
+    <>
+      <ThemeSwitch themeAdapter={themeAdapter} />
+      <ViewportInfo environmentAdapter={viteEnvironmentAdapter} />
+    </>
+  )
+}
+
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en'>
@@ -96,8 +109,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <ThemeProvider defaultTheme='system' storageKey='theme'>
           <body>
             {children}
-            <ThemeSwitch />
-            <ViewportInfo />
+            <UiOverlays />
             <ScrollRestoration />
             <Scripts />
           </body>
@@ -110,7 +122,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 export default function App() {
   useEffect(() => {
     async function enableMocking() {
-      if (import.meta.env.DEV) {
+      if (env.isDev) {
         const { initializeMSW } = await import('~/lib/mocks/browser')
         await initializeMSW()
       }

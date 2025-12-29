@@ -1,8 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { viteEnvironmentAdapter } from '@teo-garcia/react-shared/adapters/environment'
-import { createCustomThemeAdapter } from '@teo-garcia/react-shared/adapters/theme'
-import { ThemeSwitch, ViewportInfo } from '@teo-garcia/react-shared/components'
 import { Info } from 'lucide-react'
 import { useEffect } from 'react'
 import {
@@ -15,7 +12,9 @@ import {
 } from 'react-router'
 
 import stylesheet from '~/app.css?url'
-import { ThemeProvider, useTheme } from '~/components/theme-provider'
+import { ThemeProvider } from '~/components/theme-provider'
+import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
+import { ViewportInfo } from '~/components/viewport-info/viewport-info'
 import { env } from '~/lib/env'
 
 import type { Route } from './+types/root'
@@ -85,17 +84,6 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   )
 }
 
-const UiOverlays = () => {
-  const themeAdapter = createCustomThemeAdapter(useTheme())
-
-  return (
-    <>
-      <ThemeSwitch themeAdapter={themeAdapter} />
-      <ViewportInfo environmentAdapter={viteEnvironmentAdapter} />
-    </>
-  )
-}
-
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en'>
@@ -109,7 +97,8 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <ThemeProvider defaultTheme='system' storageKey='theme'>
           <body>
             {children}
-            <UiOverlays />
+            <ThemeSwitch />
+            <ViewportInfo />
             <ScrollRestoration />
             <Scripts />
           </body>

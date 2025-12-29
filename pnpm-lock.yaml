@@ -26,9 +26,6 @@ importers:
       '@tanstack/react-query-devtools':
         specifier: ^5.91.1
         version: 5.91.2(@tanstack/react-query@5.90.14(react@19.2.3))(react@19.2.3)
-      '@teo-garcia/react-shared':
-        specifier: 0.1.1
-        version: 0.1.1(lucide-react@0.562.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@vercel/react-router':
         specifier: ^1.2.3
         version: 1.2.4(@react-router/dev@7.11.0(@react-router/serve@7.11.0(react-router@7.11.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(typescript@5.9.3))(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)(react-router@7.11.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(typescript@5.9.3)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))(yaml@2.8.2))(@react-router/node@7.11.0(react-router@7.11.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(typescript@5.9.3))(isbot@5.1.32)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -1003,14 +1000,6 @@ packages:
     engines: {node: '>=20.11'}
     peerDependencies:
       prettier: ^3.0.0
-
-  '@teo-garcia/react-shared@0.1.1':
-    resolution: {integrity: sha512-Khx89dcE0mCkx1G7NPNsvcK0DpLZXXzkBGGDWHh4xZHo58TpuXNnD3Fupji2XbcMrnvQRddXHAYgVMhjQD+h6w==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      lucide-react: ^0.400.0
-      react: ^19.0.0
-      react-dom: ^19.0.0
 
   '@teo-garcia/tsconfig-shared@0.1.2':
     resolution: {integrity: sha512-Op01gzTkeYwZ8jtmyIP/kLlQyfB5Eh7htWxPb6Xe0ind+fVbZtaHlcYT2w+WfraJT/Yw3IjDMiapJN+VVd938A==}
@@ -4321,12 +4310,6 @@ snapshots:
   '@teo-garcia/prettier-config-shared@0.2.1(prettier@3.7.4)':
     dependencies:
       prettier: 3.7.4
-
-  '@teo-garcia/react-shared@0.1.1(lucide-react@0.562.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      lucide-react: 0.562.0(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
 
   '@teo-garcia/tsconfig-shared@0.1.2': {}
 

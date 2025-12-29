@@ -1,9 +1,6 @@
 import { Zap } from 'lucide-react'
 
-import type { Route } from './+types'
-
-export function meta(arguments_: Route.MetaArgs) {
-  console.log(arguments_)
+export function meta() {
   return [
     { title: 'Home | RTR' },
     { content: 'A basic starter to use RR', name: 'description' },

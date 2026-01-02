@@ -1,7 +1,7 @@
 import type { Config } from '@react-router/dev/config'
 import { vercelPreset } from '@vercel/react-router/vite'
 
-import { isVercel } from './env.server'
+const isVercel = process.env.VERCEL === '1'
 
 export default {
   ssr: true,

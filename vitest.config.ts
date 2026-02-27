@@ -1,4 +1,13 @@
 import shared from '@teo-garcia/vitest-config-shared'
-import { defineConfig } from 'vitest/config'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import { defineConfig, mergeConfig } from 'vitest/config'
 
-export default defineConfig(shared)
+export default mergeConfig(
+  defineConfig(shared),
+  defineConfig({
+    plugins: [tsconfigPaths()],
+    test: {
+      setupFiles: ['./vitest.setup.ts'],
+    },
+  })
+)

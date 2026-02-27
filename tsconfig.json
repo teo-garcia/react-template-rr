@@ -5,7 +5,8 @@
     "paths": {
       "~/*": ["./app/*"]
     },
-    "rootDirs": [".", "./.react-router/types"]
+    "rootDirs": [".", "./.react-router/types"],
+    "types": ["vitest/globals", "@vitest/browser-playwright"]
   },
   "include": [
     "**/*",

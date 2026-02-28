@@ -70,8 +70,8 @@ importers:
         specifier: ^4.1.17
         version: 4.1.18
       '@teo-garcia/eslint-config-shared':
-        specifier: file:../eslint-config-shared
-        version: file:../eslint-config-shared(8f8867004fcfa5ec31a236203032b7da)
+        specifier: ^0.3.8
+        version: 0.3.8(8f8867004fcfa5ec31a236203032b7da)
       '@teo-garcia/prettier-config-shared':
         specifier: ^0.2.8
         version: 0.2.8(prettier@3.8.1)
@@ -1042,8 +1042,8 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@teo-garcia/eslint-config-shared@file:../eslint-config-shared':
-    resolution: {directory: ../eslint-config-shared, type: directory}
+  '@teo-garcia/eslint-config-shared@0.3.8':
+    resolution: {integrity: sha512-JEXZOgY1n/8urfZPtd/xyIBzfMNBKMtPz38i8hGXBWP54dQzHdlup0zPKY/wzgAQ+gGAsmyZ5Rq0vzQK73u3kQ==}
     engines: {node: '>=21'}
     peerDependencies:
       '@eslint/compat': ^1.3.1
@@ -4487,7 +4487,7 @@ snapshots:
       '@tanstack/query-core': 5.90.20
       react: 19.2.4
 
-  '@teo-garcia/eslint-config-shared@file:../eslint-config-shared(8f8867004fcfa5ec31a236203032b7da)':
+  '@teo-garcia/eslint-config-shared@0.3.8(8f8867004fcfa5ec31a236203032b7da)':
     dependencies:
       '@eslint/compat': 2.0.2(eslint@9.39.2(jiti@2.6.1))
       '@eslint/eslintrc': 3.3.3

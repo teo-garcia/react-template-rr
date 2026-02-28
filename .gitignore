@@ -1,23 +1,20 @@
-# Logs
-logs
+node_modules/
+dist/
+build/
+.react-router/
+coverage/
+*.tsbuildinfo
+
 *.log
-pnpm-debug.log*
-tsconfig.tsbuildinfo
-
-# Node
-/node_modules/
-/build/
-/.react-router/
-*.local
-
-# Editor directories and files
-.vscode/*
 .DS_Store
 
-# secrets
 .env
+.env.local
+.env.*.local
 
-# e2e reports
-/test-results/
-/playwright-report/
-/playwright/.cache/
+.vercel
+.vscode/
+
+test-results/
+playwright-report/
+playwright/.cache/

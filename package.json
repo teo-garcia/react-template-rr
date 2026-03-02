@@ -16,6 +16,8 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^10.0.0",
@@ -63,6 +65,7 @@
     "vite-tsconfig-paths": "^6.0.0",
     "vitest": "^4.0.14"
   },
+  "packageManager": "pnpm@10.2.0",
   "engines": {
     "node": ">=24"
   },
@@ -79,6 +82,7 @@
   "scripts": {
     "build": "pnpm run build:web",
     "build:web": "react-router build",
+    "commitlint": "commitlint --edit",
     "coverage": "vitest run --coverage",
     "dev": "pnpm run dev:web",
     "dev:web": "react-router dev",

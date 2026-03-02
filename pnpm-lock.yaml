@@ -36,8 +36,8 @@ importers:
         specifier: ^5
         version: 5.1.35
       lucide-react:
-        specifier: ^0.575.0
-        version: 0.575.0(react@19.2.4)
+        specifier: ^0.576.0
+        version: 0.576.0(react@19.2.4)
       react:
         specifier: ^19.2.0
         version: 19.2.4
@@ -71,7 +71,7 @@ importers:
         version: 4.2.1
       '@teo-garcia/eslint-config-shared':
         specifier: ^0.3.8
-        version: 0.3.8(62cd2caf488df1004c2021e4766ff689)
+        version: 0.3.8(d9a9ff858fbba8f050141a4ef2168812)
       '@teo-garcia/prettier-config-shared':
         specifier: ^0.2.8
         version: 0.2.8(prettier@3.8.1)
@@ -134,7 +134,7 @@ importers:
         version: 6.10.2(eslint@10.0.2(jiti@2.6.1))
       eslint-plugin-playwright:
         specifier: ^2.4.0
-        version: 2.8.0(eslint@10.0.2(jiti@2.6.1))
+        version: 2.9.0(eslint@10.0.2(jiti@2.6.1))
       eslint-plugin-react:
         specifier: ^7.37.5
         version: 7.37.5(eslint@10.0.2(jiti@2.6.1))
@@ -1974,8 +1974,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-playwright@2.8.0:
-    resolution: {integrity: sha512-BRCXbnX20l/ZPOOi1jEqNvqU/UjXpkZRJaghQxSM2kjAvsDph8+osn9u1iMmvoa9Cegbp9d0Skh7vro7242t+Q==}
+  eslint-plugin-playwright@2.9.0:
+    resolution: {integrity: sha512-k3xrG6YzrallWNFMoGUjMNeu3SFFKXN79KJQBD2PkM4PasJegqV2Up+mPY5od2UmPKQGT+MeIhCmWH8r5eYuQQ==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -2647,8 +2647,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.575.0:
-    resolution: {integrity: sha512-VuXgKZrk0uiDlWjGGXmKV6MSk9Yy4l10qgVvzGn2AWBx1Ylt0iBexKOAoA6I7JO3m+M9oeovJd3yYENfkUbOeg==}
+  lucide-react@0.576.0:
+    resolution: {integrity: sha512-koNxU14BXrxUfZQ9cUaP0ES1uyPZKYDjk31FQZB6dQ/x+tXk979sVAn9ppZ/pVeJJyOxVM8j1E+8QEuSc02Vug==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -4472,7 +4472,7 @@ snapshots:
       '@tanstack/query-core': 5.90.20
       react: 19.2.4
 
-  '@teo-garcia/eslint-config-shared@0.3.8(62cd2caf488df1004c2021e4766ff689)':
+  '@teo-garcia/eslint-config-shared@0.3.8(d9a9ff858fbba8f050141a4ef2168812)':
     dependencies:
       '@eslint/compat': 2.0.2(eslint@10.0.2(jiti@2.6.1))
       '@eslint/eslintrc': 3.3.4
@@ -4488,7 +4488,7 @@ snapshots:
       globals: 17.4.0
     optionalDependencies:
       eslint-plugin-jsx-a11y: 6.10.2(eslint@10.0.2(jiti@2.6.1))
-      eslint-plugin-playwright: 2.8.0(eslint@10.0.2(jiti@2.6.1))
+      eslint-plugin-playwright: 2.9.0(eslint@10.0.2(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@10.0.2(jiti@2.6.1))
       eslint-plugin-react-hooks: 7.0.1(eslint@10.0.2(jiti@2.6.1))
       eslint-plugin-react-refresh: 0.5.2(eslint@10.0.2(jiti@2.6.1))
@@ -5527,7 +5527,7 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-playwright@2.8.0(eslint@10.0.2(jiti@2.6.1)):
+  eslint-plugin-playwright@2.9.0(eslint@10.0.2(jiti@2.6.1)):
     dependencies:
       eslint: 10.0.2(jiti@2.6.1)
       globals: 17.4.0
@@ -6252,7 +6252,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.575.0(react@19.2.4):
+  lucide-react@0.576.0(react@19.2.4):
     dependencies:
       react: 19.2.4
 

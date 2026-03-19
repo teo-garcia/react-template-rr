@@ -95,6 +95,7 @@
     "lint:ts": "react-router typegen && tsc --noEmit",
     "postinstall": "node scripts/postinstall.js",
     "prepare": "husky",
+    "start": "pnpm run start:web",
     "start:web": "react-router-serve ./build/server/index.js",
     "test": "vitest",
     "test:browser": "vitest --browser",

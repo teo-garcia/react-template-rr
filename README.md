@@ -5,7 +5,7 @@
 **Production-ready React Router starter with Vite, TypeScript, and modern
 testing**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/Node-22+-339933?logo=node.js&logoColor=white)](https://nodejs.org)
 [![pnpm](https://img.shields.io/badge/pnpm-9+-F69220?logo=pnpm&logoColor=white)](https://pnpm.io)
 [![React Router](https://img.shields.io/badge/React_Router-7-CA4245?logo=react-router&logoColor=white)](https://reactrouter.com)
@@ -45,11 +45,19 @@ cd my-app
 # Install dependencies
 pnpm install
 
+# Configure environment
+cp .env.example .env
+
 # Start development server
 pnpm dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) to see your app.
+
+## Environment Setup
+
+The template ships with a root `.env.example`. Copy it to `.env` before local
+development and adjust values as needed for your environment.
 
 ## Project Structure
 
@@ -64,19 +72,21 @@ app/
 
 ## Scripts
 
-| Command              | Description                 |
-| -------------------- | --------------------------- |
-| `pnpm dev`           | Start development server    |
-| `pnpm build`         | Create production build     |
-| `pnpm start:web`     | Run production server       |
-| `pnpm test`          | Run unit tests              |
-| `pnpm test:browser`  | Run browser tests           |
-| `pnpm test:e2e`      | Run Playwright E2E tests    |
-| `pnpm lint:es`       | Lint and fix with ESLint    |
-| `pnpm lint:es:check` | Check ESLint without fixing |
-| `pnpm lint:ts`       | TypeScript type checking    |
-| `pnpm format`        | Format with Prettier        |
-| `pnpm format:check`  | Check formatting            |
+| Command              | Description                            |
+| -------------------- | -------------------------------------- |
+| `pnpm dev`           | Start development server               |
+| `pnpm build`         | Create production build                |
+| `pnpm start`         | Run production server                  |
+| `pnpm test`          | Run unit tests                         |
+| `pnpm test:browser`  | Run browser tests                      |
+| `pnpm test:e2e`      | Run Playwright E2E tests               |
+| `pnpm coverage`      | Run tests with coverage                |
+| `pnpm check`         | Run lint, typecheck, format, and tests |
+| `pnpm lint:es`       | Lint and fix with ESLint               |
+| `pnpm lint:es:check` | Check ESLint without fixing            |
+| `pnpm lint:ts`       | TypeScript type checking               |
+| `pnpm format`        | Format with Prettier                   |
+| `pnpm format:check`  | Check formatting                       |
 
 ## Shared Configs
 

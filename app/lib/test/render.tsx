@@ -1,21 +1,18 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { createWrapper } from '@teo-garcia/react-shared/test-utils'
 import { render as tlRender, type RenderOptions } from '@testing-library/react'
 
 import { ThemeProvider } from '~/components/theme-provider'
-import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
-import { ViewportInfo } from '~/components/viewport-info/viewport-info'
 
-const createTestQueryClient = () =>
-  new QueryClient({ defaultOptions: { queries: { retry: false } } })
+// QueryClient + provider is handled by createWrapper from react-shared.
+// AllProviders composes it with the React Router-specific ThemeProvider.
+const QueryWrapper = createWrapper()
 
 const AllProviders = ({ children }: React.PropsWithChildren) => (
-  <QueryClientProvider client={createTestQueryClient()}>
+  <QueryWrapper>
     <ThemeProvider defaultTheme='light' storageKey='theme-test'>
       {children}
-      <ThemeSwitch />
-      <ViewportInfo />
     </ThemeProvider>
-  </QueryClientProvider>
+  </QueryWrapper>
 )
 
 const renderWithProviders = (

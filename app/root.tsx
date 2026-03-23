@@ -1,5 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { DevPanel } from '@teo-garcia/react-shared/components/dev-panel'
+import { SkipLink } from '@teo-garcia/react-shared/components/skip-link'
 import { Info } from 'lucide-react'
 import { useEffect } from 'react'
 import {
@@ -14,7 +16,6 @@ import {
 import stylesheet from '~/app.css?url'
 import { ThemeProvider } from '~/components/theme-provider'
 import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
-import { ViewportInfo } from '~/components/viewport-info/viewport-info'
 import { env } from '~/lib/env'
 
 import type { Route } from './+types/root'
@@ -96,9 +97,10 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <QueryClientProvider client={createQueryClient()}>
         <ThemeProvider defaultTheme='system' storageKey='theme'>
           <body>
-            {children}
+            <SkipLink href='#main-content' />
+            <main id='main-content'>{children}</main>
             <ThemeSwitch />
-            <ViewportInfo />
+            <DevPanel />
             <ScrollRestoration />
             <Scripts />
           </body>

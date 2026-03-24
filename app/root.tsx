@@ -1,3 +1,4 @@
+// eslint-disable-next-line simple-import-sort/imports
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { DevPanel } from '@teo-garcia/react-shared/components/dev-panel'
@@ -5,12 +6,12 @@ import { SkipLink } from '@teo-garcia/react-shared/components/skip-link'
 import { Info } from 'lucide-react'
 import { useEffect } from 'react'
 import {
-  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  isRouteErrorResponse,
 } from 'react-router'
 
 import stylesheet from '~/app.css?url'

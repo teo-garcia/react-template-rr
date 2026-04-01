@@ -1,11 +1,21 @@
 import { useQuery } from '@tanstack/react-query'
 
-const useHealthcheck = (url: string = 'http://localhost:3001/healthcheck') => {
+import { parseHealthResponse } from '~/lib/health'
+
+const fetchHealth = async () => {
+  const response = await fetch('/api/health')
+
+  if (!response.ok) {
+    throw new Error(`Health request failed with status ${response.status}`)
+  }
+
+  return parseHealthResponse(await response.json())
+}
+
+const useHealthcheck = () => {
   return useQuery({
-    queryFn: async () => {
-      return await fetch(url).then((response) => response.json())
-    },
-    queryKey: ['healthcheck'],
+    queryFn: fetchHealth,
+    queryKey: ['health'],
   })
 }
 

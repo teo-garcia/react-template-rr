@@ -25,8 +25,11 @@ const parsedEnv = envSchema.parse({
 })
 
 export const env = {
+  appEnv: parsedEnv.DEV ? 'development' : 'production',
+  isDevelopment: parsedEnv.DEV,
+  isProduction: parsedEnv.PROD,
+  isServer: parsedEnv.SSR,
   isDev: parsedEnv.DEV,
   isProd: parsedEnv.PROD,
-  isServer: parsedEnv.SSR,
   publicUrl: parsedEnv.VITE_PUBLIC_URL,
 } as const

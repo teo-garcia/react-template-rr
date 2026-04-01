@@ -1,10 +1,10 @@
 // eslint-disable-next-line simple-import-sort/imports
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { DevPanel } from '@teo-garcia/react-shared/components/dev-panel'
 import { SkipLink } from '@teo-garcia/react-shared/components/skip-link'
 import { Info } from 'lucide-react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Links,
   Meta,
@@ -18,10 +18,9 @@ import stylesheet from '~/app.css?url'
 import { ThemeProvider } from '~/components/theme-provider'
 import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
 import { env } from '~/lib/env'
+import { createQueryClient } from '~/lib/query-client'
 
 import type { Route } from './+types/root'
-
-const createQueryClient = () => new QueryClient()
 
 export const links: Route.LinksFunction = () => [
   {
@@ -49,7 +48,7 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   if (isRouteErrorResponse(error)) {
     message = error.status === 404 ? '404' : 'Error'
     details = error.statusText || details
-  } else if (env.isDev && error && error instanceof Error) {
+  } else if (env.isDevelopment && error && error instanceof Error) {
     details = error.message
     stack = error.stack
   }
@@ -87,6 +86,8 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
 }
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [queryClient] = useState(createQueryClient)
+
   return (
     <html lang='en'>
       <head>
@@ -95,7 +96,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <Meta />
         <Links />
       </head>
-      <QueryClientProvider client={createQueryClient()}>
+      <QueryClientProvider client={queryClient}>
         <ThemeProvider defaultTheme='system' storageKey='theme'>
           <body>
             <SkipLink href='#main-content' />
@@ -114,7 +115,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 export default function App() {
   useEffect(() => {
     async function enableMocking() {
-      if (env.isDev) {
+      if (env.isDevelopment) {
         const { initializeMSW } = await import('~/lib/mocks/browser')
         await initializeMSW()
       }

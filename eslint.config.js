@@ -1,3 +1,4 @@
+// eslint-disable-next-line simple-import-sort/imports
 import { defineConfig } from 'eslint/config'
 import shared from '@teo-garcia/eslint-config-shared'
 import sharedPlaywright from '@teo-garcia/eslint-config-shared/playwright'

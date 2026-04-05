@@ -27,8 +27,8 @@ importers:
         specifier: ^5.91.1
         version: 5.96.0(@tanstack/react-query@5.96.0(react@19.2.4))(react@19.2.4)
       '@teo-garcia/react-shared':
-        specifier: ^1.6.0
-        version: 1.6.0(@tanstack/react-query@5.96.0(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^1.6.1
+        version: 1.6.1(@tanstack/react-query@5.96.0(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@vercel/react-router':
         specifier: ^1.2.3
         version: 1.2.6(@react-router/dev@7.13.2(@react-router/serve@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)(vite@7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))(yaml@2.8.3))(@react-router/node@7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3))(isbot@5.1.37)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -1147,8 +1147,8 @@ packages:
     peerDependencies:
       prettier: ^3.0.0
 
-  '@teo-garcia/react-shared@1.6.0':
-    resolution: {integrity: sha512-4dh6p3m8Qgy3vxwq2ahA/5Y+UISkC/6G9B6NvYb37vNuIJqpgmLXb5XED6bYjKGva6m+oVSRaivnGEq6IQ7jJg==}
+  '@teo-garcia/react-shared@1.6.1':
+    resolution: {integrity: sha512-Y+rgrSXfeOCrNt1gD76bK6N4Uf24Pq/8OCDziZwxtL8SKIEWMxFZ4rRVs+2pkIgjIvo8veBsOeN9IIHbYkHNNw==}
     engines: {node: '>=24'}
     peerDependencies:
       '@tanstack/react-query': ^5.0.0
@@ -1160,6 +1160,10 @@ packages:
         optional: true
       '@testing-library/react':
         optional: true
+
+  '@teo-garcia/ts-core@0.1.1':
+    resolution: {integrity: sha512-lhqRmPUtJkkchAzWMfhcNViq5HI/Tn2dxMb7stZ/S/1Iuyh/Z55Rpp3+8OMNYnEu4nVEhpf6/rAS8XySbef9cA==}
+    engines: {node: '>=24'}
 
   '@teo-garcia/tsconfig-shared@0.2.0':
     resolution: {integrity: sha512-HIhMuGDzoqd2JNXfmzG4HQZWpPOs7kFsxo2XwIOUZg0uN8/iGEopTMDcX0fHjivgH1WJqHp1j+hh17hNa/Dwqw==}
@@ -1645,6 +1649,11 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
+  baseline-browser-mapping@2.10.14:
+    resolution: {integrity: sha512-fOVLPAsFTsQfuCkvahZkzq6nf8KvGWanlYoTh0SVA0A/PIUxQGU2AOZAoD95n2gFLVDW/jP6sbGLny95nmEuHA==}
+    engines: {node: '>=6.0.0'}
+    hasBin: true
+
   basic-auth@2.0.1:
     resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
     engines: {node: '>= 0.8'}
@@ -1711,6 +1720,9 @@ packages:
 
   caniuse-lite@1.0.30001782:
     resolution: {integrity: sha512-dZcaJLJeDMh4rELYFw1tvSn1bhZWYFOt468FcbHHxx/Z/dFidd1I6ciyFdi3iwfQCyOjqo9upF6lGQYtMiJWxw==}
+
+  caniuse-lite@1.0.30001785:
+    resolution: {integrity: sha512-blhOL/WNR+Km1RI/LCVAvA73xplXA7ZbjzI4YkMK9pa6T/P3F2GxjNpEkyw5repTw9IvkyrjyHpwjnhZ5FOvYQ==}
 
   chai@6.2.2:
     resolution: {integrity: sha512-NUPRluOfOiTKBKvWPtSD4PhFvWCqOi0BGStNWs57X9js7XGTprSmFoz5F0tWhR4WPjNeR9jXqdC7/UpSJTnlRg==}
@@ -1963,8 +1975,8 @@ packages:
   electron-to-chromium@1.5.328:
     resolution: {integrity: sha512-QNQ5l45DzYytThO21403XN3FvK0hOkWDG8viNf6jqS42msJ8I4tGDSpBCgvDRRPnkffafiwAym2X2eHeGD2V0w==}
 
-  electron-to-chromium@1.5.329:
-    resolution: {integrity: sha512-/4t+AS1l4S3ZC0Ja7PHFIWeBIxGA3QGqV8/yKsP36v7NcyUCl+bIcmw6s5zVuMIECWwBrAK/6QLzTmbJChBboQ==}
+  electron-to-chromium@1.5.331:
+    resolution: {integrity: sha512-IbxXrsTlD3hRodkLnbxAPP4OuJYdWCeM3IOdT+CpcMoIwIoDfCmRpEtSPfwBXxVkg9xmBeY7Lz2Eo2TDn/HC3Q==}
 
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
@@ -3012,6 +3024,9 @@ packages:
 
   node-releases@2.0.36:
     resolution: {integrity: sha512-TdC8FSgHz8Mwtw9g5L4gR/Sh9XhSP/0DEkQxfEFXOpiul5IiHgHan2VhYYb6agDSfp4KuvltmGApc8HMgUrIkA==}
+
+  node-releases@2.0.37:
+    resolution: {integrity: sha512-1h5gKZCF+pO/o3Iqt5Jp7wc9rH3eJJ0+nh/CIoiRwjRxde/hAHyLPXYN4V3CqKAbiZPSeJFSWHmJsbkicta0Eg==}
 
   object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
@@ -4791,8 +4806,9 @@ snapshots:
     dependencies:
       prettier: 3.8.1
 
-  '@teo-garcia/react-shared@1.6.0(@tanstack/react-query@5.96.0(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@teo-garcia/react-shared@1.6.1(@tanstack/react-query@5.96.0(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
+      '@teo-garcia/ts-core': 0.1.1
       clsx: 2.1.1
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
@@ -4800,6 +4816,8 @@ snapshots:
     optionalDependencies:
       '@tanstack/react-query': 5.96.0(react@19.2.4)
       '@testing-library/react': 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+
+  '@teo-garcia/ts-core@0.1.1': {}
 
   '@teo-garcia/tsconfig-shared@0.2.0': {}
 
@@ -5359,6 +5377,8 @@ snapshots:
 
   baseline-browser-mapping@2.10.12: {}
 
+  baseline-browser-mapping@2.10.14: {}
+
   basic-auth@2.0.1:
     dependencies:
       safe-buffer: 5.1.2
@@ -5403,10 +5423,10 @@ snapshots:
 
   browserslist@4.28.2:
     dependencies:
-      baseline-browser-mapping: 2.10.12
-      caniuse-lite: 1.0.30001782
-      electron-to-chromium: 1.5.329
-      node-releases: 2.0.36
+      baseline-browser-mapping: 2.10.14
+      caniuse-lite: 1.0.30001785
+      electron-to-chromium: 1.5.331
+      node-releases: 2.0.37
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
   buffer-from@1.1.2: {}
@@ -5439,6 +5459,8 @@ snapshots:
   callsites@3.1.0: {}
 
   caniuse-lite@1.0.30001782: {}
+
+  caniuse-lite@1.0.30001785: {}
 
   chai@6.2.2: {}
 
@@ -5661,7 +5683,7 @@ snapshots:
 
   electron-to-chromium@1.5.328: {}
 
-  electron-to-chromium@1.5.329: {}
+  electron-to-chromium@1.5.331: {}
 
   emoji-regex@10.6.0: {}
 
@@ -6830,6 +6852,8 @@ snapshots:
       semver: 6.3.1
 
   node-releases@2.0.36: {}
+
+  node-releases@2.0.37: {}
 
   object-assign@4.1.1: {}
 

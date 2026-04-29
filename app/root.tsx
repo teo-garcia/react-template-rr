@@ -1,8 +1,6 @@
 // eslint-disable-next-line simple-import-sort/imports
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { DevPanel } from '@teo-garcia/react-shared/components/dev-panel'
-import { SkipLink } from '@teo-garcia/react-shared/components/skip-link'
 import { Info } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import {
@@ -99,10 +97,8 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider defaultTheme='system' storageKey='theme'>
           <body>
-            <SkipLink href='#main-content' />
             <main id='main-content'>{children}</main>
             <ThemeSwitch />
-            <DevPanel />
             <ScrollRestoration />
             <Scripts />
           </body>

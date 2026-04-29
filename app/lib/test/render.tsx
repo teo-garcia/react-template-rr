@@ -1,10 +1,22 @@
-import { createWrapper } from '@teo-garcia/react-shared/test-utils'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render as tlRender, type RenderOptions } from '@testing-library/react'
+import { createElement, type ReactNode } from 'react'
 
 import { ThemeProvider } from '~/components/theme-provider'
 
-// QueryClient + provider is handled by createWrapper from react-shared.
-// AllProviders composes it with the React Router-specific ThemeProvider.
+const createWrapper = (
+  queryClient = new QueryClient({
+    defaultOptions: {
+      mutations: { retry: false },
+      queries: { gcTime: 0, retry: false },
+    },
+  })
+) => {
+  return function Wrapper({ children }: { children: ReactNode }) {
+    return createElement(QueryClientProvider, { client: queryClient }, children)
+  }
+}
+
 const QueryWrapper = createWrapper()
 
 const AllProviders = ({ children }: React.PropsWithChildren) => (

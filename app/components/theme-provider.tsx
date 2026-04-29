@@ -1,5 +1,7 @@
-import { useColorScheme, useLocalStorage } from '@teo-garcia/react-shared/hooks'
 import { createContext, useContext, useEffect, useMemo } from 'react'
+
+import { useColorScheme } from '~/lib/hooks/use-color-scheme'
+import { useLocalStorage } from '~/lib/hooks/use-local-storage'
 
 type Theme = 'dark' | 'light' | 'system'
 

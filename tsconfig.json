@@ -1,7 +1,6 @@
 {
   "extends": "@teo-garcia/tsconfig-shared/react-router",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"]
     },

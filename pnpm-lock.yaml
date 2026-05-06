@@ -73,17 +73,17 @@ importers:
         specifier: ^4.1.17
         version: 4.2.4
       '@teo-garcia/eslint-config-shared':
-        specifier: ^0.4.0
-        version: 0.4.0(96e6ddd1258d7f5d6cddb784cb86dcdf)
+        specifier: ^0.4.1
+        version: 0.4.1(96e6ddd1258d7f5d6cddb784cb86dcdf)
       '@teo-garcia/prettier-config-shared':
-        specifier: ^0.2.9
-        version: 0.2.9(prettier@3.8.3)
+        specifier: ^0.2.10
+        version: 0.2.10(prettier@3.8.3)
       '@teo-garcia/tsconfig-shared':
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.1
+        version: 0.2.1
       '@teo-garcia/vitest-config-shared':
-        specifier: ^0.3.7
-        version: 0.3.7(@vitejs/plugin-react@5.2.0(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(@vitest/browser-playwright@4.1.5)(vite-tsconfig-paths@6.1.1(typescript@6.0.3)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(vitest@4.1.5)
+        specifier: ^0.3.9
+        version: 0.3.9(@vitejs/plugin-react@5.2.0(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(@vitest/browser-playwright@4.1.5)(vite-tsconfig-paths@6.1.1(typescript@6.0.3)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(vitest@4.1.5)
       '@testing-library/dom':
         specifier: ^10.4.1
         version: 10.4.1
@@ -1105,29 +1105,29 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@teo-garcia/eslint-config-shared@0.4.0':
-    resolution: {integrity: sha512-KEMwKXUWV6Y5b4nDXJ4OqH5+KScjKsEzVrETLtaW2onlaLBLl2MSPyFp3OVn6tk/lBPADPVMx4ZJG5sJ69ccQA==}
+  '@teo-garcia/eslint-config-shared@0.4.1':
+    resolution: {integrity: sha512-D110dXzV4okdlXZ995t0midTUWMVp44l2yC2qab31Uu0crdyZM3pseTH/0LBGneNn5o6u4bmszfbzDoNO0zX5A==}
     engines: {node: '>=24'}
     peerDependencies:
-      '@eslint/compat': ^1.3.1
+      '@eslint/compat': ^2.0.3
       '@eslint/eslintrc': ^3.3.1
-      '@eslint/js': ^9.0.0
-      '@typescript-eslint/eslint-plugin': ^8.0.0
-      '@typescript-eslint/parser': ^8.0.0
-      eslint: ^9.0.0
+      '@eslint/js': ^10.0.0
+      '@typescript-eslint/eslint-plugin': ^8.58.0
+      '@typescript-eslint/parser': ^8.58.0
+      eslint: ^10.0.0
       eslint-config-prettier: ^10.1.5
       eslint-plugin-import: ^2.32.0
       eslint-plugin-jsx-a11y: ^6.10.2
-      eslint-plugin-playwright: ^2.2.0
+      eslint-plugin-playwright: ^2.10.1
       eslint-plugin-react: ^7.37.5
       eslint-plugin-react-hooks: ^7.0.0
-      eslint-plugin-react-native: ^4.1.0
-      eslint-plugin-react-refresh: ^0.4.9
-      eslint-plugin-simple-import-sort: ^12.1.1
-      eslint-plugin-sonarjs: ^3.0.4
-      eslint-plugin-testing-library: ^7.0.0
-      eslint-plugin-unicorn: ^61.0.0
-      globals: ^16.0.0
+      eslint-plugin-react-native: ^4.1.0 || ^5.0.0
+      eslint-plugin-react-refresh: ^0.5.2
+      eslint-plugin-simple-import-sort: ^12.1.1 || ^13.0.0
+      eslint-plugin-sonarjs: ^4.0.2
+      eslint-plugin-testing-library: ^7.16.2
+      eslint-plugin-unicorn: ^64.0.0
+      globals: ^17.4.0
     peerDependenciesMeta:
       eslint-plugin-jsx-a11y:
         optional: true
@@ -1144,19 +1144,21 @@ packages:
       eslint-plugin-testing-library:
         optional: true
 
-  '@teo-garcia/prettier-config-shared@0.2.9':
-    resolution: {integrity: sha512-G1X4yBPxe+Fn1XBB9N+6DPZM+0+n+Ec1ofoXcAbqfzOPaDdJKo7LAzhf87HiWyfSbMzgclJDyvAhO4fWQ2LPrQ==}
+  '@teo-garcia/prettier-config-shared@0.2.10':
+    resolution: {integrity: sha512-obCS5hxBBtQ/we0Czk9iiStU6ddtJLWTthDrwcTIRNFCSECLbvqrjabviaW+l7uVp972x3JQUyZAOopaapV2Lg==}
     engines: {node: '>=24'}
     peerDependencies:
       prettier: ^3.0.0
 
-  '@teo-garcia/tsconfig-shared@0.2.0':
-    resolution: {integrity: sha512-HIhMuGDzoqd2JNXfmzG4HQZWpPOs7kFsxo2XwIOUZg0uN8/iGEopTMDcX0fHjivgH1WJqHp1j+hh17hNa/Dwqw==}
+  '@teo-garcia/tsconfig-shared@0.2.1':
+    resolution: {integrity: sha512-ypVxJWCc45BLvvXKjGpqHG2qw9qyGqPt42iQLFDA+hehJGE1dnnLIOKsyKX4v15n4FJ4THMiUFaHBKF1z+mNdw==}
+    engines: {node: '>=24'}
 
-  '@teo-garcia/vitest-config-shared@0.3.7':
-    resolution: {integrity: sha512-wgSEDujy2gwqcpjGa/6I3tVqUAckj1WarU7xmI3/c/ZumrY8/LqkTv4w/LJZhW9MHp1GPeuAB7rGJzCyVnyR3w==}
+  '@teo-garcia/vitest-config-shared@0.3.9':
+    resolution: {integrity: sha512-u08FKb5rq/9vFPc/nmZzb2elgYI/GJwq/CBxtsTG2gcn0ZD3xvkJxrW2mLmiDXpnuzYXR0ci3Ia1A0QUHjbPvA==}
+    engines: {node: '>=24'}
     peerDependencies:
-      '@vitejs/plugin-react': ^5.0.4
+      '@vitejs/plugin-react': ^5.0.4 || ^6.0.0
       '@vitest/browser-playwright': ^4.0.0
       vite-tsconfig-paths: ^6.0.0
       vitest: ^4.0.0
@@ -4862,7 +4864,7 @@ snapshots:
       '@tanstack/query-core': 5.100.6
       react: 19.2.5
 
-  '@teo-garcia/eslint-config-shared@0.4.0(96e6ddd1258d7f5d6cddb784cb86dcdf)':
+  '@teo-garcia/eslint-config-shared@0.4.1(96e6ddd1258d7f5d6cddb784cb86dcdf)':
     dependencies:
       '@eslint/compat': 2.0.5(eslint@10.2.1(jiti@2.6.1))
       '@eslint/eslintrc': 3.3.5
@@ -4884,13 +4886,13 @@ snapshots:
       eslint-plugin-react-refresh: 0.5.2(eslint@10.2.1(jiti@2.6.1))
       eslint-plugin-testing-library: 7.16.2(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3)
 
-  '@teo-garcia/prettier-config-shared@0.2.9(prettier@3.8.3)':
+  '@teo-garcia/prettier-config-shared@0.2.10(prettier@3.8.3)':
     dependencies:
       prettier: 3.8.3
 
-  '@teo-garcia/tsconfig-shared@0.2.0': {}
+  '@teo-garcia/tsconfig-shared@0.2.1': {}
 
-  '@teo-garcia/vitest-config-shared@0.3.7(@vitejs/plugin-react@5.2.0(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(@vitest/browser-playwright@4.1.5)(vite-tsconfig-paths@6.1.1(typescript@6.0.3)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(vitest@4.1.5)':
+  '@teo-garcia/vitest-config-shared@0.3.9(@vitejs/plugin-react@5.2.0(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(@vitest/browser-playwright@4.1.5)(vite-tsconfig-paths@6.1.1(typescript@6.0.3)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(vitest@4.1.5)':
     dependencies:
       '@vitejs/plugin-react': 5.2.0(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))
       '@vitest/browser-playwright': 4.1.5(msw@2.13.6(@types/node@24.12.2)(typescript@6.0.3))(playwright@1.59.1)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))(vitest@4.1.5)

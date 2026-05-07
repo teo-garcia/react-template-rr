@@ -1,15 +1,14 @@
-// eslint-disable-next-line simple-import-sort/imports
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Info } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import {
+  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  isRouteErrorResponse,
 } from 'react-router'
 
 import stylesheet from '~/app.css?url'

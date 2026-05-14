@@ -22,7 +22,7 @@
     "@eslint/js": "^10.0.0",
     "@playwright/test": "^1.57.0",
     "@react-router/dev": "^7.9.6",
-    "@tailwindcss/postcss": "^4.1.17",
+    "@tailwindcss/vite": "^4.1.17",
     "@teo-garcia/eslint-config-shared": "^0.4.1",
     "@teo-garcia/prettier-config-shared": "^0.2.10",
     "@teo-garcia/tsconfig-shared": "^0.2.1",
@@ -64,7 +64,6 @@
     "typescript": "^6.0.0",
     "vite": "^8.0.0",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-tsconfig-paths": "^6.0.0",
     "vitest": "^4.0.14",
     "vitest-axe": "^0.1.0"
   },

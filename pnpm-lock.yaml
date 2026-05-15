@@ -29,6 +29,9 @@ importers:
       '@vercel/react-router':
         specifier: ^1.2.3
         version: 1.2.6(@react-router/dev@7.14.2(@react-router/serve@7.14.2(react-router@7.14.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@6.0.3))(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(react-router@7.14.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@6.0.3)(vite@8.0.13(@types/node@24.12.2)(esbuild@0.27.7)(jiti@2.6.1)(yaml@2.8.3))(yaml@2.8.3))(@react-router/node@7.14.2(react-router@7.14.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@6.0.3))(isbot@5.1.39)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      better-themes:
+        specifier: ^1.1.0
+        version: 1.1.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       isbot:
         specifier: ^5
         version: 5.1.39
@@ -1773,6 +1776,12 @@ packages:
   basic-auth@2.0.1:
     resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
     engines: {node: '>= 0.8'}
+
+  better-themes@1.1.0:
+    resolution: {integrity: sha512-lP8TR7h84NzonjGrD4E7eOqx/5lPt7BZTeSOk2IwDOOVqjdY6ClpXpCrtUrRbCfvYILxiQ1H13kSzsVlYc4gBA==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
 
   body-parser@1.20.5:
     resolution: {integrity: sha512-3grm+/2tUOvu2cjJkvsIxrv/wVpfXQW4PsQHYm7yk4vfpu7Ekl6nEsYBoJUL6qDwZUx8wUhQ8tR2qz+ad9c9OA==}
@@ -5684,6 +5693,11 @@ snapshots:
   basic-auth@2.0.1:
     dependencies:
       safe-buffer: 5.1.2
+
+  better-themes@1.1.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+    dependencies:
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
 
   body-parser@1.20.5:
     dependencies:

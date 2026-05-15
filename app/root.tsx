@@ -1,5 +1,6 @@
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ThemeProvider } from 'better-themes'
 import { Info } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import {
@@ -12,7 +13,6 @@ import {
 } from 'react-router'
 
 import stylesheet from '~/app.css?url'
-import { ThemeProvider } from '~/components/theme-provider'
 import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
 import { env } from '~/lib/env'
 import { createQueryClient } from '~/lib/query-client'
@@ -86,23 +86,27 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [queryClient] = useState(createQueryClient)
 
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <Meta />
         <Links />
       </head>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider defaultTheme='system' storageKey='theme'>
-          <body>
+      <body suppressHydrationWarning>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          disableTransitionOnChange
+        >
+          <QueryClientProvider client={queryClient}>
             <main id='main-content'>{children}</main>
             <ThemeSwitch />
-            <ScrollRestoration />
-            <Scripts />
-          </body>
+          </QueryClientProvider>
         </ThemeProvider>
-      </QueryClientProvider>
+        <ScrollRestoration />
+        <Scripts />
+      </body>
     </html>
   )
 }

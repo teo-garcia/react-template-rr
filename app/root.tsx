@@ -16,10 +16,15 @@ import stylesheet from '~/app.css?url'
 import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
 import { env } from '~/lib/env'
 import { createQueryClient } from '~/lib/query-client'
+import { getCanonicalUrl, getSeoMeta } from '~/lib/seo'
 
 import type { Route } from './+types/root'
 
 export const links: Route.LinksFunction = () => [
+  {
+    rel: 'canonical',
+    href: getCanonicalUrl(),
+  },
   {
     rel: 'icon',
     href: '/favicon.ico',
@@ -37,6 +42,9 @@ export const links: Route.LinksFunction = () => [
   },
   { rel: 'stylesheet', href: stylesheet },
 ]
+
+export const meta: Route.MetaFunction = () => getSeoMeta()
+
 export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   let message = 'Oops!'
   let details = 'An unexpected error occurred.'

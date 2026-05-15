@@ -1,10 +1,11 @@
 import { Zap } from 'lucide-react'
 
+import { getSeoMeta, siteMetadata } from '~/lib/seo'
+
 export function meta() {
-  return [
-    { title: 'Home | RTRR' },
-    { content: 'A basic starter to use RR', name: 'description' },
-  ]
+  return getSeoMeta({
+    title: `Home | ${siteMetadata.shortName}`,
+  })
 }
 
 export async function loader() {

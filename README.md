@@ -93,6 +93,16 @@ The app starts on `http://localhost:3000`.
 | CI                 | GitHub Actions for lint, typecheck, test, and build |
 | Delivery           | Vercel deployment workflow                          |
 
+## Security Headers
+
+`vercel.json` owns the deployment header baseline for this template: Content
+Security Policy, Cross-Origin-Opener-Policy, Permissions-Policy,
+Referrer-Policy, X-Content-Type-Options, and X-Frame-Options.
+
+Local `react-router-serve` preview does not provide the governed global header
+hook. HSTS is intentionally deployment-owned because TLS termination and domain
+preload policy belong to the hosting layer.
+
 ---
 
 ## Shared Configs

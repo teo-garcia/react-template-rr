@@ -2,7 +2,7 @@ import { Zap } from 'lucide-react'
 
 export function meta() {
   return [
-    { title: 'Home | RTR' },
+    { title: 'Home | RTRR' },
     { content: 'A basic starter to use RR', name: 'description' },
   ]
 }

@@ -83,6 +83,19 @@ The app starts on `http://localhost:3000`.
 
 ---
 
+## Route States
+
+React Router framework conventions own route-state wiring:
+
+| File                                     | Purpose                                                                   |
+| ---------------------------------------- | ------------------------------------------------------------------------- |
+| `app/root.tsx`                           | Root `ErrorBoundary`, `HydrateFallback`, and pending navigation indicator |
+| `app/routes/not-found.tsx`               | Catch-all unmatched route UI                                              |
+| `app/routes.ts`                          | Catch-all `*` route registration                                          |
+| `app/components/route-state/route-state` | Shared local state UI                                                     |
+
+---
+
 ## Shared Governance
 
 | Area               | Tooling                                             |

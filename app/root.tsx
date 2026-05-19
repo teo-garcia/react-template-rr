@@ -1,7 +1,6 @@
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ThemeProvider } from 'better-themes'
-import { Info } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import {
   isRouteErrorResponse,
@@ -10,9 +9,16 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useNavigation,
 } from 'react-router'
 
 import stylesheet from '~/app.css?url'
+import {
+  NavigationPendingIndicator,
+  RouteLoadingState,
+  RouteNotFoundState,
+  RouteState,
+} from '~/components/route-state/route-state'
 import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
 import { env } from '~/lib/env'
 import { createQueryClient } from '~/lib/query-client'
@@ -46,12 +52,10 @@ export const links: Route.LinksFunction = () => [
 export const meta: Route.MetaFunction = () => getSeoMeta()
 
 export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
-  let message = 'Oops!'
-  let details = 'An unexpected error occurred.'
+  let details = 'The current route failed to render.'
   let stack: string | undefined
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? '404' : 'Error'
     details = error.statusText || details
   } else if (env.isDevelopment && error && error instanceof Error) {
     details = error.message
@@ -59,35 +63,20 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   }
 
   if (isRouteErrorResponse(error) && error.status === 404)
-    return (
-      <section className='flex h-screen flex-col items-center justify-center gap-y-10 xl:gap-y-16 text-foreground dark:text-background'>
-        <Info className='size-16 md:size-28' />
-        <h1 className='text-4xl md:text-6xl font-semibold lg:text-7xl'>
-          Page not found
-        </h1>
-        <p className='md:text-2xl'>
-          The page you are looking for does not exist.
-        </p>
-      </section>
-    )
+    return <RouteNotFoundState />
 
   return (
-    <main className='fixed inset-0 bg-red-50 dark:bg-red-950/20 flex items-center justify-center'>
-      <div className='max-w-md p-8 bg-white dark:bg-gray-800 rounded-lg shadow-xl'>
-        <div className='text-red-600 dark:text-red-400 text-4xl font-bold mb-4'>
-          {message}
-        </div>
-        <div className='text-gray-600 dark:text-gray-300 mb-6'>{details}</div>
-        {stack && (
-          <div className='bg-gray-100 dark:bg-gray-900 rounded-sm p-4'>
-            <code className='text-sm text-gray-800 dark:text-gray-200 font-mono'>
-              {stack}
-            </code>
-          </div>
-        )}
-      </div>
-    </main>
+    <RouteState
+      description={details}
+      details={stack}
+      title='Something went wrong'
+      variant='error'
+    />
   )
+}
+
+export const HydrateFallback = () => {
+  return <RouteLoadingState />
 }
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -120,6 +109,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 }
 
 export default function App() {
+  const navigation = useNavigation()
+  const isNavigating = navigation.state !== 'idle'
+
   useEffect(() => {
     async function enableMocking() {
       if (env.isDevelopment) {
@@ -132,6 +124,7 @@ export default function App() {
 
   return (
     <>
+      {isNavigating && <NavigationPendingIndicator />}
       <Outlet />
       <ReactQueryDevtools buttonPosition='bottom-left' />
     </>

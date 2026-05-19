@@ -22,7 +22,7 @@ import {
 import { ThemeSwitch } from '~/components/theme-switch/theme-switch'
 import { env } from '~/lib/env'
 import { createQueryClient } from '~/lib/query-client'
-import { getCanonicalUrl, getSeoMeta } from '~/lib/seo'
+import { getCanonicalUrl, getSeoMeta, siteMetadata } from '~/lib/seo'
 
 import type { Route } from './+types/root'
 
@@ -61,6 +61,10 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
     details = error.message
     stack = error.stack
   }
+
+  useEffect(() => {
+    document.title = `Something went wrong | ${siteMetadata.shortName}`
+  }, [])
 
   if (isRouteErrorResponse(error) && error.status === 404)
     return <RouteNotFoundState />

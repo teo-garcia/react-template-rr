@@ -148,12 +148,10 @@
    Base layer – emitted first so nothing can override it by accident
 ------------------------------------------------------------------ */
 @layer base {
-  /* Global colours & transitions ---------------------------------- */
   html,
   body {
     font-family: 'Geist', sans-serif;
-    @apply bg-background text-foreground;
-    @apply transition-colors duration-200;
+    @apply bg-background text-foreground transition-[background-color] duration-100 ease-out motion-reduce:transition-none;
   }
 
   .dark {

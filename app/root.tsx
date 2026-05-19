@@ -99,11 +99,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <Links />
       </head>
       <body suppressHydrationWarning>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <QueryClientProvider client={queryClient}>
             <main id='main-content'>{children}</main>
             <ThemeSwitch />

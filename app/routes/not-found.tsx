@@ -1,12 +1,11 @@
 import { RouteNotFoundState } from '~/components/route-state/route-state'
-import { getSeoMeta, siteMetadata } from '~/lib/seo'
-
-export function meta() {
-  return getSeoMeta({
-    title: `Page not found | ${siteMetadata.shortName}`,
-  })
-}
+import { siteMetadata } from '~/lib/seo'
 
 export default function NotFoundRoute() {
-  return <RouteNotFoundState />
+  return (
+    <>
+      <title>{`Page not found | ${siteMetadata.shortName}`}</title>
+      <RouteNotFoundState />
+    </>
+  )
 }

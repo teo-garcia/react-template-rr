@@ -62,20 +62,24 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
     stack = error.stack
   }
 
-  useEffect(() => {
-    document.title = `Something went wrong | ${siteMetadata.shortName}`
-  }, [])
-
   if (isRouteErrorResponse(error) && error.status === 404)
-    return <RouteNotFoundState />
+    return (
+      <>
+        <title>{`Page not found | ${siteMetadata.shortName}`}</title>
+        <RouteNotFoundState />
+      </>
+    )
 
   return (
-    <RouteState
-      description={details}
-      details={stack}
-      title='Something went wrong'
-      variant='error'
-    />
+    <>
+      <title>{`Something went wrong | ${siteMetadata.shortName}`}</title>
+      <RouteState
+        description={details}
+        details={stack}
+        title='Something went wrong'
+        variant='error'
+      />
+    </>
   )
 }
 

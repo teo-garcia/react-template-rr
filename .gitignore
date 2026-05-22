@@ -13,7 +13,9 @@ coverage/
 .env.*.local
 
 .vercel
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 
 test-results/
 playwright-report/

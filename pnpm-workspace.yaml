@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  msw: true
+
+overrides:
+  "@mjackson/node-fetch-server": "npm:@remix-run/node-fetch-server@^0.13.0"

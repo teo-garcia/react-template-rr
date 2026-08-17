@@ -74,7 +74,7 @@
   "msw": {
     "workerDirectory": "public"
   },
-  "name": "react-template-rr",
+  "name": "react-router-template-fullstack",
   "private": true,
   "scripts": {
     "analyze": "ANALYZE=true react-router build",

@@ -1,6 +1,6 @@
 <div align="center">
 
-# React Template RR
+# React Router Template Fullstack
 
 **Production-ready React Router starter with Vite, TypeScript, and modern
 testing**
@@ -131,13 +131,13 @@ preload policy belong to the hosting layer.
 
 ## Related Templates
 
-| Template                     | Description          |
-| ---------------------------- | -------------------- |
-| `react-template-next`        | Next.js SSR template |
-| `react-native-template-expo` | Expo mobile app      |
-| `nest-template-monolith`     | NestJS backend       |
-| `nest-template-microservice` | NestJS microservice  |
-| `fastapi-template-monolith`  | FastAPI backend      |
+| Template                     | Description                 |
+| ---------------------------- | --------------------------- |
+| `next-template-fullstack`    | Next.js full-stack template |
+| `react-native-template-expo` | Expo mobile app             |
+| `nest-template-monolith`     | NestJS backend              |
+| `nest-template-microservice` | NestJS microservice         |
+| `fastapi-template-monolith`  | FastAPI backend             |
 
 ---
 

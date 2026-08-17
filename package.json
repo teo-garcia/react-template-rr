@@ -39,7 +39,7 @@
     "@typescript-eslint/parser": "^8.48.1",
     "@vitejs/plugin-react": "^6.0.0",
     "@vitest/browser-playwright": "^4.0.0",
-    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/coverage-v8": "^4.1.0",
     "@vitest/ui": "4.1.10",
     "axe-core": "^4.11.1",
     "babel-plugin-react-compiler": "^1.0.0",

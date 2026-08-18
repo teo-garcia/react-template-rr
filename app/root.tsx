@@ -13,6 +13,7 @@ import {
 } from 'react-router'
 
 import stylesheet from '~/app.css?url'
+import { HealthStatus } from '~/components/health-status/health-status'
 import {
   NavigationPendingIndicator,
   RouteLoadingState,
@@ -65,14 +66,14 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   if (isRouteErrorResponse(error) && error.status === 404)
     return (
       <>
-        <title>{`Page not found | ${siteMetadata.shortName}`}</title>
+        <title>{`${siteMetadata.shortName} | Page not found`}</title>
         <RouteNotFoundState />
       </>
     )
 
   return (
     <>
-      <title>{`Something went wrong | ${siteMetadata.shortName}`}</title>
+      <title>{`${siteMetadata.shortName} | Something went wrong`}</title>
       <RouteState
         description={details}
         details={stack}
@@ -101,8 +102,11 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <body suppressHydrationWarning>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <QueryClientProvider client={queryClient}>
-            <main id='main-content'>{children}</main>
+            <div className='min-h-screen'>
+              <main id='main-content'>{children}</main>
+            </div>
             <ThemeSwitch />
+            <HealthStatus />
           </QueryClientProvider>
         </ThemeProvider>
         <ScrollRestoration />

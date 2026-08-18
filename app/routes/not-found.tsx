@@ -4,7 +4,7 @@ import { siteMetadata } from '~/lib/seo'
 export default function NotFoundRoute() {
   return (
     <>
-      <title>{`Page not found | ${siteMetadata.shortName}`}</title>
+      <title>{`${siteMetadata.shortName} | Page not found`}</title>
       <RouteNotFoundState />
     </>
   )

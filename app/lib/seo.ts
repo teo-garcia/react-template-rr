@@ -5,8 +5,8 @@ const publicUrl = env.publicUrl.replace(/\/$/, '')
 export const siteMetadata = {
   description:
     'Production-ready React Router template with server rendering, theme support, health checks, tests, and Docker defaults.',
-  name: 'React Template React Router',
-  shortName: 'RTRR',
+  name: 'React Router Template Fullstack',
+  shortName: 'RRF',
   url: publicUrl,
 } as const
 
@@ -17,7 +17,7 @@ export const getCanonicalUrl = (path = '/') => {
 export const getSeoMeta = ({
   description = siteMetadata.description,
   path = '/',
-  title = siteMetadata.name,
+  title = siteMetadata.shortName,
 }: {
   description?: string
   path?: string

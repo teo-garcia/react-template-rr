@@ -3,7 +3,7 @@ import { getSeoMeta, siteMetadata } from '~/lib/seo'
 
 export function meta() {
   return getSeoMeta({
-    title: `Home | ${siteMetadata.shortName}`,
+    title: `${siteMetadata.shortName} | Home`,
   })
 }
 

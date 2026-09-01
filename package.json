@@ -40,11 +40,11 @@
     "@vitejs/plugin-react": "^6.0.0",
     "@vitest/browser-playwright": "^4.0.0",
     "@vitest/coverage-v8": "^4.1.0",
-    "@vitest/ui": "4.1.10",
+    "@vitest/ui": "4.1.11",
     "axe-core": "^4.11.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "concurrently": "^10.0.0",
-    "eslint": "10.8.0",
+    "eslint": "10.9.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -67,7 +67,7 @@
     "vitest": "^4.0.14",
     "vitest-axe": "^0.1.0"
   },
-  "packageManager": "pnpm@11.20.0",
+  "packageManager": "pnpm@11.25.0",
   "engines": {
     "node": ">=24"
   },

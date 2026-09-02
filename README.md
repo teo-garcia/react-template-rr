@@ -96,25 +96,15 @@ React Router framework conventions own route-state wiring:
 
 ---
 
-## Shared Governance
-
-| Area               | Tooling                                             |
-| ------------------ | --------------------------------------------------- |
-| Dependency updates | Renovate                                            |
-| Issue intake       | GitHub issue templates                              |
-| Change review      | Pull request template                               |
-| CI                 | GitHub Actions for lint, typecheck, test, and build |
-| Delivery           | Vercel deployment workflow                          |
-
 ## Security Headers
 
 `vercel.json` owns the deployment header baseline for this template: Content
 Security Policy, Cross-Origin-Opener-Policy, Permissions-Policy,
 Referrer-Policy, X-Content-Type-Options, and X-Frame-Options.
 
-Local `react-router-serve` preview does not provide the governed global header
-hook. HSTS is intentionally deployment-owned because TLS termination and domain
-preload policy belong to the hosting layer.
+Local `react-router-serve` preview does not provide a global header hook. HSTS
+is intentionally deployment-owned because TLS termination and domain preload
+policy belong to the hosting layer.
 
 ---
 

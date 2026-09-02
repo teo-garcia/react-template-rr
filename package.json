@@ -1,8 +1,8 @@
 {
   "author": "teo-garcia",
   "dependencies": {
-    "@react-router/node": "^7.9.6",
-    "@react-router/serve": "^7.9.6",
+    "@react-router/node": "^8.0.0",
+    "@react-router/serve": "^8.0.0",
     "@remix-run/node-fetch-server": "^0.14.0",
     "@tanstack/react-query": "^5.90.11",
     "@tanstack/react-query-devtools": "^5.91.1",
@@ -12,7 +12,7 @@
     "lucide-react": "^1.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router": "^7.9.6",
+    "react-router": "^8.0.0",
     "zod": "^4.0.0"
   },
   "devDependencies": {
@@ -22,7 +22,7 @@
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^10.0.0",
     "@playwright/test": "^1.57.0",
-    "@react-router/dev": "^7.9.6",
+    "@react-router/dev": "^8.0.0",
     "@rolldown/plugin-babel": "^0.2.1",
     "@tailwindcss/vite": "^4.1.17",
     "@teo-garcia/eslint-config-shared": "^0.4.2",

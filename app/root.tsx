@@ -1,7 +1,7 @@
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ThemeProvider } from 'better-themes'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   isRouteErrorResponse,
   Links,
@@ -120,21 +120,11 @@ export default function App() {
   const navigation = useNavigation()
   const isNavigating = navigation.state !== 'idle'
 
-  useEffect(() => {
-    async function enableMocking() {
-      if (env.isDevelopment) {
-        const { initializeMSW } = await import('~/lib/mocks/browser')
-        await initializeMSW()
-      }
-    }
-    enableMocking()
-  }, [])
-
   return (
     <>
       {isNavigating && <NavigationPendingIndicator />}
       <Outlet />
-      <ReactQueryDevtools buttonPosition='bottom-left' />
+      <ReactQueryDevtools buttonPosition='bottom-right' />
     </>
   )
 }
